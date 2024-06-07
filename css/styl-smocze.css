@@ -1,14 +1,21 @@
-body{
+* {
     margin: 0;
     padding: 0;
-    background-color: #000;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(100deg, #ff7f55, #ff6410);
     font-family: 'Comic Sans MS';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header{
     text-align: center;
     color: white;
-    padding: 10px;
+    padding: 2em 0;
     background-color: #D32F2F;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
 }
@@ -17,7 +24,6 @@ nav{
     text-align: center;
     background-color: #ffba4b;
     padding: 12px;
-    text-align: center;
     font-weight: bold;
 }
 
@@ -27,13 +33,21 @@ main{
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main1{
+    background-color: #bb4924;
+}
+
+.main2, .main3{
+    background-color: #272424;
 }
 
 footer{
-    text-align: left;
     color: white;
-    padding: 10px;
+    text-align: center;
+    padding: 2em 0;
 }
 
 nav ul{
@@ -55,21 +69,27 @@ nav a{
 
 nav a:hover{
     color: #fff;
+    text-decoration: underline;
 }
 
-main h2 {
+.main1 h1{
+    color: red;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px  2px 0 #000, 2px  2px 0 #000;
+}
+
+.main2 h2{
     color: #999999;
     margin-top: 0;
     border-bottom: 2px solid #8a8a8a;
     padding-bottom: 10px;
 }
 
-main h3 a {
+.main2 h3 a{
     color: #ff7b00;
     text-decoration: none;
 }
 
-main h3 a:hover {
+.main2 h3 a:hover{
     text-decoration: underline;
 }
 
@@ -77,7 +97,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    
 }
 
 table th, table td {
@@ -86,29 +105,41 @@ table th, table td {
     text-align: center;
 }
 
-table th {
+.main2 table th {
     background-color: #e46b00;
     color: white;
 }
 
-table tr{
+.main2 table tr{
     background-color: #2f2f2f;
 }
 
-table tr:nth-child(even) {
+.main2 table tr:nth-child(even) {
     background-color: #5f5f5f;
 }
 
-table tr:hover{
+.main2 table tr:hover{
     background-color: #ffffff;
     color: black;
 }
 
-table a {
+table a{
     color: #ff7b00;
+    font-style: italic;
     text-decoration: none;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;
 }
 
 table a:hover {
     text-decoration: underline;
+    text-shadow: none;
+}
+
+.main3 table th {
+    background-color: #7e7e7e;
+    color: white;
+}
+
+.main3 table tr{
+    background-color: #1a1a1a;
 }

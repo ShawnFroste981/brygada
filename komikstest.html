@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styl-test.css">
+    <link rel="shortcut icon" href="obrazy/icon/nerd.png">
+    <title>Test</title>
+</head>
+<body>
+    <main style="display: block;">
+        <img src="komiks/1.png" alt="komiks" id="obraz-komiksu">
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const images = [
+                'komiks/1.png',
+                'komiks/2.png',
+                'komiks/3.png',
+                'komiks/4.png',
+            ];
+            
+            let currentImageIndex = 0;
+            const comicImage = document.getElementById('obraz-komiksu');
+
+            function changeImage() {
+                currentImageIndex++;
+                if (currentImageIndex >= images.length) {
+                    window.location.href = 'index.html';
+                } else {
+                    comicImage.src = images[currentImageIndex];
+                }
+            }
+
+            comicImage.addEventListener('click', changeImage);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight') {
+                    changeImage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
