@@ -143,3 +143,12 @@ table a:hover {
 .main3 table tr{
     background-color: #1a1a1a;
 }
+
+footer h3, h4{
+    font-size: 20px;
+}
+
+footer a{
+    color: rgb(40, 40, 40);
+    text-decoration: none;
+}

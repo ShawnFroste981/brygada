@@ -23,20 +23,30 @@
             let currentImageIndex = 0;
             const comicImage = document.getElementById('obraz-komiksu');
 
-            function changeImage() {
-                currentImageIndex++;
-                if (currentImageIndex >= images.length) {
-                    window.location.href = 'index.html';
-                } else {
-                    comicImage.src = images[currentImageIndex];
+            function changeImage(direction) {
+                if (direction === 'next') {
+                    currentImageIndex++;
+                } else if (direction === 'previous') {
+                    currentImageIndex--;
                 }
+                
+                if (currentImageIndex < 0) {
+                    currentImageIndex = 0; // Nie cofaj się, gdy jesteś na pierwszym obrazie
+                } else if (currentImageIndex >= images.length) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                comicImage.src = images[currentImageIndex];
             }
 
-            comicImage.addEventListener('click', changeImage);
+            comicImage.addEventListener('click', () => changeImage('next'));
 
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'ArrowRight') {
-                    changeImage();
+                    changeImage('next');
+                } else if (event.key === 'ArrowLeft' && currentImageIndex > 0) {
+                    changeImage('previous'); // Cofnij tylko, gdy obecny obraz nie jest pierwszym
                 }
             });
         });
