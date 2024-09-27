@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./visage.css">
+    <link rel="shortcut icon" href="../obrazy/icon/visage.png">
+    <title>Brygada - Visage - Test</title>
+</head>
+<body>
+    <nav class="navik">
+        <nav class="name">
+            <p>Visage</p>
+        </nav>
+        <nav class="help">
+            <p><span class="key">A</span>, <span class="key">D</span> - Zmiana strony komiksu</p>
+            <p><span class="key">W</span>, <span class="key">S</span> - Zmiana wielkości obrazu</p>
+            <p><span class="key">Q</span>, <span class="key">E</span> - Początek i koniec komiksu</p>
+            <p><span class="key">DEL</span> - Egzekucja strony</p>
+            <p><span class="key">ESC</span> - Powrót do Projektu Visage</p>
+        </nav>
+        <nav class="page">
+            <p id="page-counter">[ X / X ]</p> <!-- Początkowa wartość licznika stron -->
+        </nav>
+    </nav>
+
+    <main>
+        <img src="visage/1a.png" alt="komiks" id="obraz-komiksu" style="height: 920px;">
+    </main>
+
+    <script>
+        // Baza z kolejnością obrazów
+        const images = [
+            'visage/1a.png',
+            'visage/1b.png',
+            'visage/1c.png',
+            'visage/1d.png',
+            'visage/1e.png',
+            'visage/2a.png',
+            'visage/2b.png',
+            'visage/2c.png',
+            'visage/2d.png',
+            'visage/2e.png',
+            'visage/2f.png',
+            'visage/3a.png',
+            'visage/3b.png',
+            'visage/3c.png',
+            'visage/3d.png',
+            'visage/3e.png'
+        ];
+
+        let currentPage = 0; // Start od pierwszej strony (indeks 0)
+        let defaultHeight = '920px'; // Domyślna wysokość obrazu
+        let isFullHeight = false; // Flaga do sprawdzania, czy obraz jest na pełnej wysokości
+
+        // Funkcja aktualizująca obraz komiksu i licznik stron
+        function updateComicPage() {
+            const imageElement = document.getElementById('obraz-komiksu');
+            const pageCounter = document.getElementById('page-counter');
+
+            // Ustawienie nowego obrazu
+            imageElement.src = images[currentPage];
+
+            // Aktualizacja licznika stron
+            pageCounter.textContent = `[ ${currentPage + 1} / ${images.length} ]`;
+        }
+
+        // Funkcja zmieniająca rozmiar obrazu na pełny ekran
+        function setFullHeight() {
+            const imageElement = document.getElementById('obraz-komiksu');
+            imageElement.style.height = 'auto'; // Ustawienie wysokości na auto (bez limitu)
+            isFullHeight = true; // Zaktualizowanie flagi
+        }
+
+        // Funkcja przywracająca domyślną wysokość obrazu
+        function setDefaultHeight() {
+            const imageElement = document.getElementById('obraz-komiksu');
+            imageElement.style.height = defaultHeight; // Powrót do domyślnej wysokości
+            isFullHeight = false; // Zaktualizowanie flagi
+        }
+
+        // Funkcja do przejścia na pierwszą stronę
+        function goToFirstPage() {
+            currentPage = 0;
+            updateComicPage();
+        }
+
+        // Funkcja do przejścia na ostatnią stronę
+        function goToLastPage() {
+            currentPage = images.length - 1;
+            updateComicPage();
+        }
+
+        // Obsługa wciśnięcia klawisza
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'A' || event.key === 'a' || event.key === 'ArrowLeft') {
+                // Wciśnięto klawisz "A" lub lewą strzałkę - cofanie
+                if (currentPage > 0) {
+                    currentPage--;
+                    updateComicPage();
+                }
+            } else if (event.key === 'D' || event.key === 'd' || event.key === 'ArrowRight') {
+                // Wciśnięto klawisz "D" lub prawą strzałkę - następna strona
+                if (currentPage < images.length - 1) {
+                    currentPage++;
+                    updateComicPage();
+                }
+            } else if (event.key === 'W' || event.key === 'w' || event.key === 'ArrowUp') {
+                // Wciśnięto klawisz "W" lub strzałkę w górę - powiększenie obrazu
+                setFullHeight();
+            } else if (event.key === 'S' || event.key === 's' || event.key === 'ArrowDown') {
+                // Wciśnięto klawisz "S" lub strzałkę w dół - zmniejszenie obrazu do limitu
+                setDefaultHeight();
+            } else if (event.key === 'Q' || event.key === 'q') {
+                // Wciśnięto klawisz "Q" - przejście do pierwszej strony
+                goToFirstPage();
+            } else if (event.key === 'E' || event.key === 'e') {
+                // Wciśnięto klawisz "E" - przejście do ostatniej strony
+                goToLastPage();
+            } else if (event.key === 'Delete') {
+                // Wciśnięto klawisz "Delete" - zamknięcie okna
+                window.close(); // Zamyka okno przeglądarki
+            } else if (event.key === 'Escape') {
+                // Wciśnięto klawisz "Escape" - powrót do strony ../visage.html
+                window.location.href = '../visage.html'; // Przekierowanie na stronę
+            }
+        });
+
+        // Inicjalizacja wyświetlania pierwszej strony
+        updateComicPage(); // Załadowanie pierwszej strony od razu po załadowaniu strony
+    </script>
+</body>
+</html>

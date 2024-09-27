@@ -168,6 +168,7 @@ table td{
 
 .komiksy h2{
     color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
     font-size: 30px;
     padding: 30px;
 }
@@ -180,6 +181,7 @@ table td{
 
 .komiksy table{
     background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     border: 3px solid black; /* Adds a black border around the table */
     margin: 30px auto; /* Centers the table horizontally */
 }
@@ -201,7 +203,7 @@ table td{
 }
 
 .komiksy table tr:hover{
-    background-color: #ffffff;
+    background-color: #dadada;
     color: black;
 }
 

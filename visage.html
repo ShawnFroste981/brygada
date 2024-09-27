@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styl-visage.css">
+    <link rel="shortcut icon" href="obrazy/icon/visage.png">
+    <title>Brygada - Visage</title>
+</head>
+<body>
+    <header id="index">
+        <h1>BRYGADA</h1>
+        <p>Visage</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#index">VISAGE</a></li>
+            <li><a href="#warning">OSTRZEŻENIE</a></li>
+            <li><a href="#biblioteka">BIBLIOTEKA</a></li>
+            <li><a href="#galeria">GALERIA</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#info">INFO+</a></li>
+        </ul>
+    </nav>
+    <nav class="tab">
+        <nav class="return">
+            <a href="index.html"><img src="obrazy/home.png" height="50px"></a>
+        </nav>
+        <nav class="reset">
+            <a href="visage.html"><img src="obrazy/reset.png" height="50px"></a>
+        </nav>
+    </nav>
+
+    <main>
+        <h1>Witamy na oficjalnej stronie Visage!</h1>
+        <p>Wybierz kategorię, którą chcesz sprawdzić.</p>
+        <p>Kliknij na załącznik, aby przejść do celu twoich pragnień.</p>
+        <p>Miłego spektaklu.</p>
+    </main>
+
+    <section class="warning" id="warning">
+        <h1>OSTRZEŻENIE</h1>
+        <h2>UWAGA!</h2>
+        <h3>[Ostrzeżenie o tym że visage jest Daniela i ja tylko prezentuje jego dzieło]</h3>
+    </section>
+    <section class="biblioteka" id="biblioteka">
+        <h1>BIBLIOTEKA</h1>
+    </section>
+    <section class="biblioteka1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rozdział</th>
+                    <th>Nazwa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="komiksy/visageComic.html" target="_blank">[Nazwa]</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+
+    <footer class="what">
+        <input type="number" id="numberInput" placeholder="Wpisz liczbę">
+        <button onclick="checkCombination()"></button>
+    </footer>
+
+    <script>
+        function checkCombination() {
+            const number = document.getElementById("numberInput").value;
+            const combinations = {
+                "1001": "https://www.google.com",
+                "2137": "secret/papiezowa.html",
+                "1867": "secret/minigame1.html",
+                "6969": "secret/horror.html",
+                "1324223": "https://chimericalmovements.newgrounds.com"
+            };
+
+            if (combinations[number]) {
+                window.open(combinations[number], '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
