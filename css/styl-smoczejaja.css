@@ -423,7 +423,8 @@ main p{
 }
 
 .stan-produkcji{
-    color: rgb(3, 255, 3);
+    color: rgb(209, 255, 3);
+    /* Aktywny - color: rgb(3, 255, 3); */
 }
 
 .info4 {

@@ -207,58 +207,6 @@ table td{
     color: black;
 }
 
-.gry{
-    text-align: center;
-}
-
-.gry h1{
-    color: white;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    background-color: rgb(157, 0, 255);
-    font-weight: bold;
-    font-size: 35px;
-    padding: 10px;
-}
-
-.gry h2{
-    color: white;
-    font-size: 30px;
-    padding: 30px;
-}
-
-.gry p{
-    color: white;
-    padding: 10px;
-    font-size: 22px;
-}
-
-.gry table{
-    background-color: #272424;
-    border: 3px solid black; /* Adds a black border around the table */
-    margin: 30px auto; /* Centers the table horizontally */
-}
-
-.gry table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.gry table th {
-    background-color: #42264f;
-    color: white;
-}
-
-.gry table tr{
-    color: white;
-    background-color: #2f2f2f;
-}
-
-.gry table tr:hover{
-    background-color: #ffffff;
-    color: black;
-}
-
 .inne{
     text-align: center;
 }
@@ -274,6 +222,7 @@ table td{
 
 .inne h2{
     color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
     font-size: 30px;
     padding: 30px;
 }
@@ -286,6 +235,7 @@ table td{
 
 .inne table{
     background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     border: 3px solid black; /* Adds a black border around the table */
     margin: 30px auto; /* Centers the table horizontally */
 }
@@ -307,7 +257,7 @@ table td{
 }
 
 .inne table tr:hover{
-    background-color: #ffffff;
+    background-color: #dadada;
     color: black;
 }
 
