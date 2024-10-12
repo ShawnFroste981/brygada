@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(100deg, #4b0082, #b348ff);
+    font-family: 'Comic Sans MS';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    font-size: 2em;
+    background-color: rgb(187, 17, 255);
+}
+
+header p{
+    font-size: 20px;
+}
+
+.nav{
+    text-align: center;
+    text-shadow: 2px 2px 8px rgb(255, 255, 255);
+    background-color: rgb(222, 140, 255);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    position: fixed;
+    border: 3px solid black; /* Adds a black border around the table */
+    opacity: 0; /* Make the image invisible */
+    transition: opacity 0.5s ease; /* Add a transition effect for smooth visibility change */
+}
+
+.nav:hover{
+    opacity: 1;
+}
+
+.nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+.nav a{
+    color: #000;
+    text-decoration: none;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.nav a:hover{
+    color: #fff;
+    text-shadow: 2px 2px 8px rgb(195, 0, 254);
+}
+
+.reset{
+    background-color: rgb(222, 140, 255);
+    padding: 10px;
+    right: 0;
+    position: fixed;
+    border: 3px solid black; /* Adds a black border around the table */
+    opacity: 0; /* Make the image invisible */
+    transition: opacity 0.5s ease; /* Add a transition effect for smooth visibility change */
+}
+
+.reset:hover{
+    opacity: 1;
+}
+
+main{
+    text-align: center;
+    color: white;
+    padding: 2em;
+}
+
+main h1{
+    font-size: 50px;
+    padding: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+main p{
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+table td{
+    font-size: 25px;
+}
+
+.novele{
+    text-align: center;
+}
+
+.novele h1{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    background-color: rgb(157, 0, 255);
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.novele h2{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 30px;
+}
+
+.novele p{
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.novele table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
+}
+
+.novele table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.novele table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.novele table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.novele table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+.komiksy{
+    text-align: center;
+}
+
+.komiksy h1{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    background-color: rgb(157, 0, 255);
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.komiksy h2{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 30px;
+}
+
+.komiksy p{
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.komiksy table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
+}
+
+.komiksy table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.komiksy table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.komiksy table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.komiksy table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+.inne{
+    text-align: center;
+}
+
+.inne h1{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    background-color: rgb(157, 0, 255);
+    font-weight: bold;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.inne h2{
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 30px;
+}
+
+.inne p{
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.inne table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
+}
+
+.inne table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.inne table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.inne table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.inne table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+.logo{
+    border: 3px solid black; /* Adds a black border around the table */
+}
+
+footer{
+    background-color: rgb(207, 130, 255);
+}
+
+.basic{
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.basic h1{
+    font-size: 20px;
+}
+
+.secret {
+    opacity: 0; /* Make the image invisible */
+    transition: opacity 0.5s ease; /* Add a transition effect for smooth visibility change */
+}
+
+.secret:hover {
+    opacity: 1; /* Make the image visible when hovered */
+}

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(187, 17, 255);
+    height: 20vh; /* Użyjemy wysokości widoku */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 5vw; /* Dodajemy odstęp po bokach */
+}
+
+.header-info {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styl dla h1 */
+.header-info h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Elastyczny rozmiar w zależności od szerokości ekranu */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styl dla h2 */
+.header-info h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tekst skaluje się od małych do większych ekranów */
+    color: #555;
+}
+
+/* Styl dla p */
+.header-info p {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Dynamiczne skalowanie dla różnych rozdzielczości */
+    color: #777;
+}
+
+/* Przycisk po lewej */
+.header-buttons-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.header-buttons-left img {
+    height: 5vh; /* Skaluje się do wysokości widoku */
+    border: 2px solid black;
+}
+
+/* Przycisk po prawej */
+.header-buttons-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header-buttons-right img {
+    height: 5vh; /* Skaluje się do wysokości widoku */
+    border: 2px solid black;
+    margin-left: 10px;
+}
+
+/* Media Queries - dla mniejszych ekranów */
+@media (max-width: 768px) {
+    header {
+        height: 30vh; /* Większa wysokość dla lepszej czytelności */
+        padding: 0 2vw;
+    }
+
+    .header-info h1 {
+        font-size: clamp(1.5rem, 6vw, 3rem); /* Zmniejszamy wielkość czcionki na mniejszych ekranach */
+    }
+
+    .header-info h2 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+
+    .header-info p {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+
+    .header-buttons-left img, .header-buttons-right img {
+        height: 4vh; /* Mniejsze ikony dla telefonów */
+    }
+}

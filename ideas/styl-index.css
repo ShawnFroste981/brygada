@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: red;
+    height: 25%;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    height: 85%;
+    width: 100%;
+}
+
+nav {
+    background-color: lightgray;
+    width: 20%;
+    height: 100%;
+}
+
+main {
+    background-color: white;
+    width: 80%;
+    height: 100%;
+}
+
+footer {
+    background-color: gray;
+    height: 10%;
+    width: 100%;
+}

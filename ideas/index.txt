@@ -1,0 +1,101 @@
+[Index]
+    [Header]
+        <Brygada>
+        <Main Menu>
+        <Komentarz>
+        <Przyciski>
+    [Nav]
+        Start
+            <zawartość>
+        Opowieści
+            <zawartość>
+        Gierki
+            <zawartość>
+        Skrypty
+            <zawartość>
+        Social Media
+            <zawartość>
+    [Main]
+        Start
+            Info
+            Poradnik
+            Aktualności
+            Update Log
+        Opowieści
+            Novelki
+                Smocze Jaja
+                Alergic Boy
+                [Michala work]
+            Komiksy
+                Visage
+                Smocze Jaja
+                [Mój komiks stary]
+                [Mój komiks]
+        Gierki
+            Visual Novel [girls]
+            Rpg [świąteczny isaac]
+        Skrypty
+            Kalkulator Mocy
+            Encyklopedia
+            Galeria Sztuki
+            Bilbioteka Muzyczna
+            Zgadnij kto to?
+            SmashPass
+            Mniejsze Zło
+            Quiz
+            Sejf
+            Rozmowa [AI]
+        Social Media
+            Ten Pierwszy
+            Ten Drugi
+            Ten Trzeci
+    [Footer]
+        Wersja Strony
+            Wersja Strony [pełna]
+        Opisik
+        Kto ją wykonał
+            Instrukcje
+        Secret []
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+            <div class="nav-list">
+                <ul>
+                    <li>Start</li>
+                    <ul>
+                        <li>Info</li>
+                        <li>Instrukcje</li>
+                        <li>Aktualności</li>
+                        <li>Dziennik Aktualizacji</li>
+                    </ul>
+                    <li>Opowieści</li>
+                    <ul>
+                        <li>Novelki</li>
+                        <li>Komiksy</li>
+                    </ul>
+                    <li>Gierki</li>
+                    <ul>
+                        <li>[Visual Novel]</li>
+                        <li>[Epizod Świąteczny]</li>
+                    </ul>
+                    <li>Skrypty</li>
+                    <ul>
+                        <li>Kalkulator Mocy</li>
+                        <li>Encyklopedia</li>
+                        <li>Galeria Sztuki</li>
+                        <li>Biblioteka Muzyczna</li>
+                        <li>Zgadnij kto to?</li>
+                        <li>Smash&Pass</li>
+                        <li>Mniejsze Zło</li>
+                        <li>Brygadzisty Quiz</li>
+                        <li>Wewnętrzny Sejf</li>
+                        <li>Porozmawiaj z Brygą</li>
+                    </ul>
+                    <li>Media Społecznościowe</li>
+                    <ul>
+                        <li>Ten Pierwszy</li>
+                        <li>Ten Drugi</li>
+                        <li>Ten Trzeci</li>
+                    </ul>
+                </ul>
+            </div>

@@ -4,162 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styl-index.css">
-    <link rel="shortcut icon" href="obrazy/icon/nerd.png">
+    <link rel="shortcut icon" href="obrazy/icon/index.png">
     <title>Brygada</title>
 </head>
 <body>
-    <header id="index">
-        <h1>BRYGADA</h1>
-        <p id="topic"></p>
+    <header>
+        <div class="header-logo">
+            <h1>BRYGADA</h1>
+        </div>
+        <div class="header-info">
+            <h2>Strona Główna</h2>
+            <p id="braga"></p>
+        </div>
+        <div class="header-buttons-left">
+            <a href="stary-index.html"><img src="obrazy/settings/simple.png" alt="Simple Button"></a>
+        </div>
+        <div class="header-buttons-right">
+            <a href="index.html"><img src="obrazy/settings/reset.png" alt="Reset Button"></a>
+        </div>
+        <div class="header-theme">
+            <img src="obrazy/themes/test.png" alt="Brygada Theme">
+        </div>
     </header>
 
-    <nav class="nav">
-        <ul>
-            <li><a href="#index">STRONA GŁÓWNA</a></li>
-            <li><a href="#novele">NOVELKI</a></li>
-            <li><a href="#komiksy">KOMIKSY</a></li>
-            <li><a href="#inne">INNE</a></li>
-        </ul>
-    </nav>
-    <nav class="reset">
-        <a href="index.html"><img src="obrazy/reset.png" height="50px"></a>
-    </nav>
+    <section>
+        <nav>
+            <div class="nav-title">
+                <h1>Spis Treści</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-list-topic">Start</li>
+                    <ul>
+                        <li id="Nav-Test">[Test]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                    </ul>
+                    <li class="nav-list-topic">Opowieści</li>
+                    <ul>
+                        <li id="Nav-Novelki">[Novelki]</li>
+                        <li id="Nav-Komiksy">[Komiksy]</li>
+                    </ul>
+                    <li class="nav-list-topic">Gierki</li>
+                    <ul>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                    </ul>
+                    <li class="nav-list-topic">Skrypty</li>
+                    <ul>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                        <li>[/]</li>
+                    </ul>
+                    <li class="nav-list-topic">Media Społecznościowe</li>
+                    <ul>
+                        <li id="Nav-Social1">[Ten Pierwszy]</li>
+                        <li id="Nav-Social2">[Ten Drugi]</li>
+                        <li id="Nav-Social3">[Ten Trzeci]</li>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
 
-    <main>
-        <h1>Witamy na stronie głównej!</h1>
-        <p>Wybierz kategorię, którą chcesz obczaić.</p>
-        <p>Kliknij na załącznik, aby przejść dalej i dowiedzieć się więcej.</p>
-        <p>Nie gryziemy, jeszcze.</p>
-    </main>
+        <main>
+            <div class="main-default" id="main-default">
+                <img src="obrazy/shinji.png" alt="Mewhenpolanotanwsermygaycalls">
+                <h1>Witamy na stronie głównej!</h1>
+                <p>Wybierz kategorię, którą chcesz obczaić.</p>
+                <p>Kliknij na załącznik, aby przejść dalej i dowiedzieć się więcej.</p>
+                <p>Nie gryziemy, jeszcze.</p>
+            </div>
+            <div class="main-test" id="main-test">
+                <h1 class="main-nazwa">[ TEST ]</h1>
+                <h1 class="main-podnazwa">Testowanko</h1>
+                <h2 class="main-podlista">Raz dwa trzy</h2>
+            </div>
+            <div class="main-novelki" id="main-novelki">
+                <h1 class="main-nazwa">NOVELKI</h1>
+                <h1 class="main-podnazwa">Opowiadania, których nie zobaczysz nigdzie indziej. Bardzo dobrze.</h1>
+                <h2 class="main-podlista">Lista dostępnych treści z kategorii Noveli:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Nazwa</th>
+                            <th>Liczba Rozdziałów</th>
+                            <th>Autor</th>
+                            <th>Załącznik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="obrazy/stare/smoczejaja.jpg" height="100px" class="logo"></td>
+                            <td>Smocze Jaja</td>
+                            <td>6</td>
+                            <td>Ten Drugi</td>
+                            <td><a href="smoczejaja.html"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="obrazy/stare/alergicboy.jpg" height="100px" class="logo"></td>
+                            <td>Alergic Boy</td>
+                            <td>1</td>
+                            <td>Ten Drugi</td>
+                            <td><a href="alergicboy.html"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="main-komiksy" id="main-komiksy">
+                <h1 class="main-nazwa">KOMIKSY</h1>
+                <h1 class="main-podnazwa">Opowieści z obrazkami, które będą się tobie snić w koszmarach.</h1>
+                <h2 class="main-podlista">Lista dostępnych treści z kategorii Komiksów:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Nazwa</th>
+                            <th>Liczba Stron</th>
+                            <th>Autor</th>
+                            <th>Załącznik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="obrazy/stare/visage.png" height="100px" class="logo"></td>
+                            <td>Visage</td>
+                            <td>17</td>
+                            <td>Ten Pierwszy</td>
+                            <td><a href="visage.html"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="main-social" id="main-social1">
+                <h1 class="main-nazwa">TEN PIERWSZY</h1>
+                <h1 class="main-podnazwa">Inne linki do mediów tego pierwszego. Weźcie tylko nie spamujcie linkami na grupkach FB.</h1>
+                <h2 class="main-podlista">Lista dostępnych treści z kategorii tego pierwszego:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rodzaj Treści</th>
+                            <th>Profilowe</th>
+                            <th>Załącznik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="obrazy/stare/youtube.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/rogaly.png" height="80px" class="logo"></td>
+                            <td><a href="https://www.youtube.com/@rogal9149" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="obrazy/stare/newgrounds.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/rogaln.png" height="80px" class="logo"></td>
+                            <td><a href="https://rogalrt.newgrounds.com/" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="main-social" id="main-social2">
+                <h1 class="main-nazwa">TEN DRUGI</h1>
+                <h1 class="main-podnazwa">Inne linki do mediów tego drugiego. Weźcie tylko nie spamujcie linkami na grupkach FB.</h1>
+                <h2 class="main-podlista">Lista dostępnych treści z kategorii tego drugiego:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rodzaj Treści</th>
+                            <th>Profilowe</th>
+                            <th>Załącznik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="obrazy/stare/youtube.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/lolsyy.png" height="80px" class="logo"></td>
+                            <td><a href="https://www.youtube.com/@lolseczeq" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="obrazy/stare/youtube.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/oldlolsyy.png" height="80px" class="logo"></td>
+                            <td><a href="https://www.youtube.com/@starylolseczeq2856" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="obrazy/stare/newgrounds.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/lolsyn.png" height="80px" class="logo"></td>
+                            <td><a href="https://poopipoopipoop.newgrounds.com/" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="main-social" id="main-social3">
+                <h1 class="main-nazwa">TEN TRZECI</h1>
+                <h1 class="main-podnazwa">Inne linki do mediów tego trzeciego. Weźcie tylko nie spamujcie linkami na grupkach FB.</h1>
+                <h2 class="main-podlista">Lista dostępnych treści z kategorii tego trzeciego:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rodzaj Treści</th>
+                            <th>Profilowe</th>
+                            <th>Załącznik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="obrazy/stare/youtube.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/cocalay.png" height="80px" class="logo"></td>
+                            <td><a href="https://www.youtube.com/@Cocalalafraga" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="obrazy/stare/newgrounds.png" height="80px" class="logo"></td>
+                            <td><img src="obrazy/stare/cocalan.png" height="80px" class="logo"></td>
+                            <td><a href="https://cockalalafraga.newgrounds.com/" target="_blank"><img src="obrazy/stare/portal.png" height="50px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
 
-    <section class="novele" id="novele">
-        <h1>NOVELKI</h1>
-        <h2>Opowiadania, których nie zobaczysz nigdzie indziej. Bardzo dobrze.</h2>
-        <p>Lista dostępnych treści z kategorii Noveli:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Logo</th>
-                    <th>Nazwa</th>
-                    <th>Liczba Rozdziałów</th>
-                    <th>Autor</th>
-                    <th>Załącznik</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="obrazy/smoczejaja.jpg" height="100px" class="logo"></td>
-                    <td>Smocze Jaja</td>
-                    <td>6</td>
-                    <td>Ten Drugi</td>
-                    <td><a href="smoczejaja.html"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/alergicboy.jpg" height="100px" class="logo"></td>
-                    <td>Alergic Boy</td>
-                    <td>1</td>
-                    <td>Ten Drugi</td>
-                    <td><a href="alergicboy.html"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="komiksy" id="komiksy">
-        <h1>KOMIKSY</h1>
-        <h2>Opowieści z obrazkami, które będą się tobie snić w koszmarach.</h2>
-        <p>Lista dostępnych treści z kategorii Komiksów:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Logo</th>
-                    <th>Nazwa</th>
-                    <th>Liczba Stron</th>
-                    <th>Autor</th>
-                    <th>Załącznik</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="obrazy/visage.png" height="100px" class="logo"></td>
-                    <td>Visage</td>
-                    <td>17</td>
-                    <td>Ten Pierwszy</td>
-                    <td><a href="visage.html"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="inne" id="inne">
-        <h1>INNE</h1>
-        <h2>Inne linki do naszych innych mediów. Weźcie tylko nie spamujcie linkami na grupkach FB.</h2>
-        <p>Lista dostępnych treści z kategorii Inne:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Rodzaj Treści</th>
-                    <th>Profilowe</th>
-                    <th>Podmiot Treści</th>
-                    <th>Załącznik</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="obrazy/youtube.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/rogaly.png" height="80px" class="logo"></td>
-                    <td>Ten Pierwszy</td>
-                    <td><a href="https://www.youtube.com/@rogal9149" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/newgrounds.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/rogaln.png" height="80px" class="logo"></td>
-                    <td>Ten Pierwszy</td>
-                    <td><a href="https://rogalrt.newgrounds.com/" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/youtube.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/lolsyy.png" height="80px" class="logo"></td>
-                    <td>Ten Drugi</td>
-                    <td><a href="https://www.youtube.com/@lolseczeq" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/youtube.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/oldlolsyy.png" height="80px" class="logo"></td>
-                    <td>Ten Drugi</td>
-                    <td><a href="https://www.youtube.com/@starylolseczeq2856" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/newgrounds.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/lolsyn.png" height="80px" class="logo"></td>
-                    <td>Ten Drugi</td>
-                    <td><a href="https://poopipoopipoop.newgrounds.com/" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/youtube.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/cocalay.png" height="80px" class="logo"></td>
-                    <td>Ten Trzeci</td>
-                    <td><a href="https://www.youtube.com/@Cocalalafraga" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-                <tr>
-                    <td><img src="obrazy/newgrounds.png" height="80px" class="logo"></td>
-                    <td><img src="obrazy/cocalan.png" height="80px" class="logo"></td>
-                    <td>Ten Trzeci</td>
-                    <td><a href="https://cockalalafraga.newgrounds.com/" target="_blank"><img src="obrazy/portal.png" height="50px"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <footer class="basic">
-        <h1>Stronę wykonał: Ten Drugi</h2>
-        <h1>Wersja Strony: 1.2</h2>
-        <p>X - Niepotwierdzona liczba</p>
+    <footer>
+        <div class="footer-text">
+            <div class="footer-wersja">
+                <h1>Wersja Strony:</h1>
+                <p>[1.2] - 1.2.1</p>
+            </div>
+            <div class="footer-autor">
+                <h1>Autor Strony:</h1>
+                <p><a href="mailto:shawnfroste981@gmail.com">Ten Drugi</a></p>
+            </div>
+            <div class="footer-opis">
+                <h1>Instrukcje:</h1>
+                <p>[...]</p>
+            </div>
+        </div>
+        <div class="footer-secret">
+            <a href="secret/secret.html" target="_blank"><img class="footer-secret-image" src="obrazy/stare/thing.gif" alt="Secret Image" height="40px"></a>
+        </div>
     </footer>
-    <footer class="what">
-        <a href="secret/secret.html" target="_blank"><img class="secret" src="obrazy/thing.gif" alt="Secret Image" height="40px"></a>
-    </footer>
 
-    <script>
+    <!-- Bryga Topic -->
+    <script id="braga-topic">
         const messages = [
+            "[Tekst]",
             "Brygada",
             "Brygadzistów",
             "Zespołu R",
@@ -312,27 +406,67 @@
             "Wróć proszę"
         ];
     
-        // Get the <p> element by its ID
-        const messageElement = document.getElementById('topic');
-
-        // Retrieve the last message from localStorage
+        const specialMessages = [
+            "Wesołych Świąt"
+        ];
+    
+        let specialX = 0; // Jeżeli specjalny event, 1
+        let allMessages = [...messages];
+    
+        if (specialX === 1) {
+            specialMessages.forEach(special => {
+                allMessages.push(special);
+                allMessages.push(special);
+            });
+        }
+    
+        const messageElement = document.getElementById('braga');
         const lastMessage = localStorage.getItem('lastMessage');
     
-        // Select a random message
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        const randomMessage = messages[randomIndex];
+        const randomIndex = Math.floor(Math.random() * allMessages.length);
+        const randomMessage = allMessages[randomIndex];
     
         if (randomMessage === lastMessage) {
-        messageElement.style.color = 'gold'; // Set the text color to gold if the same
+            messageElement.style.color = 'gold';
         } else {
-        messageElement.style.color = 'white'; // Default color
+            messageElement.style.color = 'rgb(245, 168, 255)'; // Domyślny kolor
         }
-
-        // Set the random message as the text content of the <p> element
+    
         messageElement.textContent = randomMessage;
-
-        // Store the current message in localStorage
         localStorage.setItem('lastMessage', randomMessage);
+    </script>
+
+    <!-- Main Divver -->
+    <script id="main-divver">
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultDiv = document.getElementById('main-default');
+            const navItems = ['test', 'novelki', 'komiksy', 'social1', 'social2', 'social3'];
+            
+            // Hide all sections and default one
+            function showDiv(selectedId) {
+                const allDivs = document.querySelectorAll('main > div');
+                allDivs.forEach(div => {
+                    div.classList.remove('active');
+                    div.style.opacity = '0';  // Hide the div
+                    div.style.visibility = 'hidden';  // Make it invisible
+                });
+
+                const selectedDiv = document.getElementById(selectedId);
+                if (selectedDiv) {
+                    selectedDiv.classList.add('active');
+                    selectedDiv.style.opacity = '1';  // Show selected div
+                    selectedDiv.style.visibility = 'visible';  // Make it visible
+                }
+            }
+
+            // Add event listeners for nav items
+            navItems.forEach(id => {
+                const navElement = document.getElementById(`Nav-${id.charAt(0).toUpperCase() + id.slice(1)}`);
+                navElement.addEventListener('click', function() {
+                    showDiv(`main-${id}`);
+                });
+            });
+        });
     </script>
 </body>
 </html>
