@@ -4,110 +4,722 @@
     box-sizing: border-box;
 }
 
-body{
-    background: linear-gradient(100deg, #4b0082, #b348ff);
-    font-family: 'Comic Sans MS';
+/* */
+
+header {
+    background-color: rgb(187, 17, 255);
+    height: 20vh;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-header{
+.header-logo, .header-info {
     text-align: center;
-    color: white;
-    padding: 1em 0;
+}
+
+.header-logo {
+    margin-bottom: 1px;
+}
+
+.header-logo h1 {
+    font-family: 'Comic Sans MS';
+    font-size: 70px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
-    font-size: 2em;
-    background-color: rgb(187, 17, 255);
-}
-
-header p{
-    font-size: 20px;
-}
-
-.nav{
-    text-align: center;
-    text-shadow: 2px 2px 8px rgb(255, 255, 255);
-    background-color: rgb(222, 140, 255);
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
-    position: fixed;
-    border: 3px solid black; /* Adds a black border around the table */
-    opacity: 0; /* Make the image invisible */
-    transition: opacity 0.5s ease; /* Add a transition effect for smooth visibility change */
-}
-
-.nav:hover{
-    opacity: 1;
-}
-
-.nav ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li{
-    display: inline-block;
-}
-
-.nav a{
-    color: #000;
-    text-decoration: none;
-    padding: 5px;
-    margin: 0 10px;
-}
-
-.nav a:hover{
-    color: #fff;
-    text-shadow: 2px 2px 8px rgb(195, 0, 254);
-}
-
-.tab{
-    position: fixed; /* Ensure the container is fixed */
-    right: 0; /* Align to the right */
-    display: flex; /* Use flexbox for horizontal alignment */
-}
-
-.reset, .return{
-    background-color: rgb(222, 140, 255);
-    padding: 10px;
-    border: 3px solid black;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.reset:hover, .return:hover{
-    opacity: 1;
-}
-
-main{
-    text-align: center;
     color: white;
-    padding: 2em;
+    line-height: 1;
 }
 
-main h1{
+.header-info h2 {
+    font-family: 'Comic Sans MS';
+    font-size: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    color: white;
+}
+
+.header-info p {
+    font-family: 'Courier New';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    font-weight: bold;
+    color: rgb(245, 168, 255);
+}
+
+.header-logo, .header-info {
+    margin: 0;
+}
+
+.header-logo h1, .header-info h2, .header-info p {
+    margin: 0;
+}
+
+.header-buttons-left {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: grid;
+    gap: 10px;
+    z-index: 1;
+}
+
+.header-buttons-left a {
+    background-color: rgb(219, 127, 255);
+    width: 80px;
+    height: 80px;
+    border: 5px solid black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-buttons-left img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.header-buttons-left:hover img {
+    opacity: 1; /* Show the image on hover */
+}
+
+/* Right buttons container */
+.header-buttons-right {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: grid; /* Flexbox for horizontal alignment */
+    gap: 10px; /* Space between the two buttons */
+}
+
+.header-buttons-right a {
+    background-color: rgb(219, 127, 255);
+    width: 80px;
+    height: 80px;
+    border: 5px solid black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-buttons-right img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.header-buttons-right a:hover img {
+    opacity: 1;
+}
+
+.header-theme {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.header-theme img {
+    height: 100%;
+}
+
+/* */
+
+section {
+    display: flex;
+    height: 70vh;
+    width: 100%;
+}
+
+/* */
+
+nav {
+    background-color: rgb(157, 0, 255);
+    width: 20%;
+    height: 100%;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.nav-title h1 {
+    background-color: rgb(105, 0, 205);
+    font-family: 'Comic Sans MS';
+    font-size: 36px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-list{
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.nav-list ul {
+    width: 100%;
+    padding: 0;
+    align-items: flex-end;
+    list-style-type: none;
+}
+
+.nav-list-topic {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+nav ul > li {
+    background-color: rgb(157, 0, 255);
+    font-family: 'Courier New';
+    font-size: 18px;
+    text-align: left;
+    color: white;
+    padding: 8px;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.nav-list ul ul li {
+    background-color: rgb(157, 0, 255);
+    font-size: 16px;
+    text-align: left;
+    margin-left: 15px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.nav-list ul ul li:hover {
+    background-color: rgb(105, 0, 205);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+.nav-list a:hover {
+    color: yellow;
+}
+
+
+/* */
+
+main {
+    background: linear-gradient(100deg, #4b0082, #b348ff);
+    width: 80%;
+    height: 100%;
+    border: 3px solid black;
+    position: relative;
+    padding: 10px;
+}
+
+main > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+main > div.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#main-default {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* DEFAULT STYLE */
+
+.main-default {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+.main-default h1 {
+    color: white;
     font-size: 50px;
     padding: 20px;
     text-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
 
-main p{
+.main-default p {
+    color: white;
     font-size: 20px;
     text-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
 
-table td{
+.main-default img {
+    height: 400px;
+    margin-top: 20px;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* INFORMACJE STYLE */
+
+.main-informacje {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.main-informacje-h1 {
+    font-family: 'Cascadia Code';
+    font-size: 35px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    font-weight: bold;
+    color: white;
+    margin: 30px;
+}
+
+.main-informacje-p {
+    font-family: 'Cascadia Code';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    font-weight: bold;
+    color: white;
+    max-width: 60%;
+    margin: 15px auto;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* PORADNIK STYLE */
+
+.main-poradnik {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.main-poradnik-h1 {
+    font-family: 'Arial';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    margin: 30px;
+    line-height: 1.5;
+}
+
+.main-poradnik-img {
+    height: 400px;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-poradnik-div {
+    background-color: #ae00ff;
+    max-width: 50%;
+    margin: 0 auto;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin: 30px auto;
+}
+
+.main-poradnik-div h1 {
+    font-family: 'Courier New';
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    margin: 15px;
+    border-bottom: 3px solid #000000;
+}
+
+.main-poradnik-div img {
+    max-width: 50%;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-poradnik-div h2 {
+    font-family: 'Courier New';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    margin: 15px;
+}
+
+.main-poradnik-div p {
+    font-family: 'Arial';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    max-width: 80%;
+    margin: 30px auto;
+    line-height: 2;
+}
+
+.main-poradnik-span {
+    color: lightpink;
+}
+
+/* AKTUALNOŚCI STYLE */
+
+.main-aktualnosci {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.main-aktualnosci-head {
+    margin: 30px auto;
+}
+
+.main-aktualnosci-head h1 {
+    font-family: 'Arial';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    line-height: 1.7;
+}
+
+.main-aktualnosci-head table {
+    margin: 30px auto;
+    width: 80%;
+    height: 100%;
+}
+
+.main-aktualnosci-head td {
+    background-color: #d1a0ff;
+    max-width: 20%;
+    max-height: 10%;
+    width: 20%;
+    padding: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition: all 0.1s ease;
+}
+
+.main-aktualnosci-head td:hover {
+    transform: scale(1.1);
+    border-color: #8400ff;
+}
+
+.main-aktualnosci-head a {
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px auto;
+}
+
+.main-aktualnosci-head a:hover {
+    color: #ffd900;
+}
+
+.main-aktualnosci-body {
+    margin: 50px auto;
+}
+
+.main-aktualnosci-div {
+    background-color: #f0f0f0;
+    max-width: 90%;
+    margin: 30px auto;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-aktualnosci-div h1 {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 100px;
+    text-align: left;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.main-aktualnosci-divs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-aktualnosci-div-A {
+    width: 30%;
+    padding: 20px;
+}
+
+.main-aktualnosci-div-A img {
+    max-width: 100%;
+    border: 3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-aktualnosci-div-A h2 {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+
+.main-aktualnosci-div-B {
+    width: 70%;
+    padding: 20px;
+}
+
+.main-aktualnosci-div-B p {
+    font-family: 'Cambria';
+    font-size: 20px;
+    text-align: left;
+    column-count: 2;
+}
+
+.main-aktualnosci-div-tekst {
+    text-indent: 20px;
+    display: block;
+}
+
+/* AKTUALIZACJE STYLE */
+
+.main-aktualizacje {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.main-aktualizacje-head {
+    margin: 30px auto;
+}
+
+.main-aktualizacje-head h1 {
+    font-family: 'Arial';
+    font-size: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    line-height: 1.7;
+}
+
+.main-aktualizacje-head table {
+    margin: 30px auto;
+    width: 80%;
+    height: 100%;
+}
+
+.main-aktualizacje-head td {
+    background-color: #d1a0ff;
+    max-width: 20%;
+    max-height: 10%;
+    width: 20%;
+    padding: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition: all 0.1s ease;
+}
+
+.main-aktualizacje-head td:hover {
+    transform: scale(1.1);
+    border-color: #8400ff;
+}
+
+.main-aktualizacje-head a {
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px auto;
+}
+
+.main-aktualizacje-head a:hover {
+    color: #ffd900;
+}
+
+.main-aktualizacje-body {
+    margin: 50px auto;
+}
+
+.main-aktualizacje-div {
+    background-color: #f0f0f0;
+    max-width: 60%;
+    margin: 30px auto;
+    padding: 10px;
+    border: 5px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-aktualizacje-div h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: left;
+    color: #b35215;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.main-aktualizacje-div h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+.main-aktualizacje-div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: left;
+    color: #363636;
+}
+
+.main-aktualizacje-div ul {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #5c5c5c;
+    list-style-type: none;
+    line-height: 20px;
+    list-style-position: outside;
+}
+
+.main-aktualizacje-div li {
+    margin: .5em 0 .5em 0;
+    padding: 0;
+    padding-left: 40px;
+    background: url(https://steamcdn-a.akamaihd.net/apps/tf2/blog/images/blog_arrow.png) no-repeat 0px 3px;
+}
+
+/* NOVELKI STYLE */
+
+.main-novelki {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+.main-novelki table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
     font-size: 25px;
 }
 
-.novele{
+.main-novelki table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
     text-align: center;
 }
 
-.novele h1{
+.main-novelki table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.main-novelki table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.main-novelki table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+/* KOMIKSY STYLE */
+
+.main-komiksy {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+.main-komiksy table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
+    font-size: 25px;
+}
+
+.main-komiksy table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-komiksy table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.main-komiksy table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.main-komiksy table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+/* SOCIAL MEDIA STYLE */
+
+.main-social{
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+.main-social table{
+    background-color: #272424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid black; /* Adds a black border around the table */
+    margin: 30px auto; /* Centers the table horizontally */
+    font-size: 25px;
+}
+
+.main-social table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-social table th {
+    background-color: #42264f;
+    color: white;
+}
+
+.main-social table tr{
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.main-social table tr:hover{
+    background-color: #dadada;
+    color: black;
+}
+
+/* INNE STYLE */
+
+.main-nazwa {
     color: white;
     text-shadow: 2px 2px 8px rgb(0, 0, 0);
     background-color: rgb(157, 0, 255);
@@ -116,178 +728,78 @@ table td{
     padding: 10px;
 }
 
-.novele h2{
+.main-podnazwa {
     color: white;
     text-shadow: 2px 2px 8px rgb(0, 0, 0);
     font-size: 30px;
     padding: 30px;
 }
 
-.novele p{
+.main-podlista {
     color: white;
     padding: 10px;
     font-size: 22px;
-}
-
-.novele table{
-    background-color: #272424;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border: 3px solid black; /* Adds a black border around the table */
-    margin: 30px auto; /* Centers the table horizontally */
-}
-
-.novele table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.novele table th {
-    background-color: #42264f;
-    color: white;
-}
-
-.novele table tr{
-    color: white;
-    background-color: #2f2f2f;
-}
-
-.novele table tr:hover{
-    background-color: #dadada;
-    color: black;
-}
-
-.komiksy{
-    text-align: center;
-}
-
-.komiksy h1{
-    color: white;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    background-color: rgb(157, 0, 255);
-    font-weight: bold;
-    font-size: 35px;
-    padding: 10px;
-}
-
-.komiksy h2{
-    color: white;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    font-size: 30px;
-    padding: 30px;
-}
-
-.komiksy p{
-    color: white;
-    padding: 10px;
-    font-size: 22px;
-}
-
-.komiksy table{
-    background-color: #272424;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border: 3px solid black; /* Adds a black border around the table */
-    margin: 30px auto; /* Centers the table horizontally */
-}
-
-.komiksy table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.komiksy table th {
-    background-color: #42264f;
-    color: white;
-}
-
-.komiksy table tr{
-    color: white;
-    background-color: #2f2f2f;
-}
-
-.komiksy table tr:hover{
-    background-color: #dadada;
-    color: black;
-}
-
-.inne{
-    text-align: center;
-}
-
-.inne h1{
-    color: white;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    background-color: rgb(157, 0, 255);
-    font-weight: bold;
-    font-size: 35px;
-    padding: 10px;
-}
-
-.inne h2{
-    color: white;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    font-size: 30px;
-    padding: 30px;
-}
-
-.inne p{
-    color: white;
-    padding: 10px;
-    font-size: 22px;
-}
-
-.inne table{
-    background-color: #272424;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border: 3px solid black; /* Adds a black border around the table */
-    margin: 30px auto; /* Centers the table horizontally */
-}
-
-.inne table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.inne table th {
-    background-color: #42264f;
-    color: white;
-}
-
-.inne table tr{
-    color: white;
-    background-color: #2f2f2f;
-}
-
-.inne table tr:hover{
-    background-color: #dadada;
-    color: black;
 }
 
 .logo{
     border: 3px solid black; /* Adds a black border around the table */
 }
 
-footer{
+/* */
+
+footer {
     background-color: rgb(207, 130, 255);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    position: relative;
 }
 
-.basic{
-    padding: 20px;
-    margin-top: 50px;
+.footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-text div {
+    margin: 0 50px;
     text-align: center;
 }
 
-.basic h1{
-    font-size: 20px;
+.footer-text h1{
+    font-family: 'Comic Sans MS';
+    color: black;
 }
 
-.secret {
-    opacity: 0; /* Make the image invisible */
-    transition: opacity 0.5s ease; /* Add a transition effect for smooth visibility change */
+.footer-text p{
+    font-family: 'Courier New';
+    font-weight: bold;
 }
 
-.secret:hover {
-    opacity: 1; /* Make the image visible when hovered */
+.footer-text a{
+    text-decoration: none;
+    color: rgb(119, 0, 255);
+}
+
+.footer-autor {
+    margin: 0 50px;
+}
+
+.footer-secret {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1px;
+}
+
+.footer-secret-image {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.footer-secret-image:hover {
+    opacity: 1;
 }

@@ -1,0 +1,119 @@
+[Index]
+    [Header]
+        <Brygada>
+        <Main Menu>
+        <Komentarz>
+        <Przyciski>
+    [Nav]
+        Start
+            <zawartość>
+        Opowieści
+            <zawartość>
+        Gierki
+            <zawartość>
+        Skrypty
+            <zawartość>
+        Social Media
+            <zawartość>
+    [Main]
+        Start
+            Informacje (proste informacje, kiedy stworzona, dlaczego, co tu znajdziemy)
+            Poradnik (manewrowanie po stronach)
+            Aktualności (nowości fajne do omowienia typu gazeta)
+            Spis Aktualizacji (zwykly update log)
+        Opowieści
+            Smocze Jaja (przejscie do innej strony)
+            Alergic Boy (przejscie do innej strony)
+            Visage (przejscie do innej strony)
+            [Michala work] (-)
+            [Mój komiks stary] (-)
+            [Mój komiks] (-)
+        Gierki
+            Visual Novel [girls]
+            Rpg [świąteczny isaac]
+        Skrypty
+            Kalkulator Mocy
+            Encyklopedia
+            Galeria Sztuki
+            Bilbioteka Muzyczna
+            Zgadnij kto to?
+            SmashPass
+            Mniejsze Zło
+            Quiz
+            Sejf
+            Rozmowa [AI]
+        Social Media
+            Ten Pierwszy
+            Ten Drugi
+            Ten Trzeci
+    [Footer]
+        Wersja Strony
+        Autor
+        Instrukcje
+        Secret []
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[Informacje]
+(proste informacje, kiedy stworzona, dlaczego, co tu znajdziemy)
+    [Co to za strona?]
+
+    [Geneza]
+        - projekt rozpoczoł się 6 lipca, ale tak naprawde prawidłowa wersja powstała 7 lipca
+        - archiwizacja i dostępność do komiksu Visage i novelki Smoczych Jaj
+
+    [Zawartości]
+
+„Brygada” to strona stworzona przez tego drugiego we współpracy z brygadzistami. Jest to hobbistyczny projekt mający na celu archiwizację oraz dostęp do projektów związanych z naszą trójką brygadzistów. Strona powstała, by gromadzić i udostępniać nasze twórcze dzieła w różnych formach.
+
+Prace nad konceptem i projektem strony rozpoczęły się 6 lipca 2024 roku, a pierwsza funkcjonalna wersja strony została upubliczniona 7 lipca 2024 roku. Początkowym celem było udostępnienie novelki „Smoczych Jaj” oraz systemu komiksowego dla „Visage”. Z biegiem czasu strona otrzymywała coraz więcej poprawek i ulepszeń, aż w końcu zacząłem pracować nad nią bardziej systematycznie, dążąc do tego, aby stała się oficjalną stroną od brygadzistów dla brygadzistów, dodawając nowe podstrony, skrypty, projekty oraz inne drobne elementy.
+
+Obecnie na stronie znajduje się znacznie więcej niż początkowo planowałem. Oprócz „Smoczych Jaj” i „Visage”, dostępne są także inne opowieści, które zostały dodane w trakcie rozwoju strony. Ponadto, znajdziesz tu również kategorię z grami mojego autorstwa – krótkimi formami ucieczki od rzeczywistości. Poza grami dostępne są także skrypty, linki do mediów społecznościowych oraz sekrety, które czekają na odkrycie przez ciebie.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[Poradnik]
+(masz problem z zrozumienem o co chodzi, strona dla kazdego i dla nikogo, instrukcje propo manewrowania po stronach, różne rodzaje, obraz i wytłumaczenie)
+(tekst, rodzaj kategorii, kategoria, obraz+opis gdzie sie znajduje i tekst)
+
+    [ZDANIA TYPU NIE WIESZ DLACZEGO TO SIE DZIEJE]
+    (obraz - to sie czesto zdarza)
+    [OPIS]
+
+    [TEKST]
+    [NAZWA]
+    [OBRAZ]
+    [2 OPISY MAŁE, RODZAJ FUNKCJI, LOKALIZACJA + MIEJSCE NA EKRANIE]
+    [PEŁNY OPIS]
+
+    
+    [Upraszczator]
+        Upraszczator to specjalna funkcja działająca jako przycisk, który po naciśnięciu przekierowuje użytkownika do uproszczonej wersji strony, zarówno pod względem wyglądu, jak i dostępności. Dzięki temu każdy może skorzystać z prostszej, bardziej przejrzystej wersji witryny. Funkcja ta jest idealna dla użytkowników, którzy przeglądają stronę z innych urządzeń niż komputer, ze względu na problemy z wyświetlaniem pełnej wersji strony na takich urządzeniach. Upraszczator znajduje się w lewym górnym rogu strony i wygląda jak pusty, lekko zaokrąglony kwadrat.
+    [Reset]
+        Resetor to funkcja działająca jako przycisk, której głównym zadaniem jest odświeżenie strony po jego naciśnięciu. Jest to prosta, ale niezwykle przydatna funkcja, która pozwala na szybsze odświeżenie strony w porównaniu do manualnego odświeżania w przeglądarce. Resetor, podobnie jak Upraszczator, znajduje się w górnym rogu strony, ale po prawej stronie i również wygląda jak pusty, lekko zaokrąglony kwadrat.
+    [Bryga]
+        Brygadowy Tekścik (w skrócie BTXT) to tekstowa funkcja, która pojawia się na każdej stronie i wyświetla losowy tekst z puli dostępnych w bazie. Za każdym razem, gdy strona zostanie odświeżona lub wyświetlona, tekst zmienia się w sposób losowy. Dzięki tej funkcji, korzystając z Resetora, użytkownicy mogą szybko sprawdzić inne wersje możliwych tekstów. Baza zawiera ponad 200 różnych tekstów, które są zróżnicowane pod względem treści. Co ciekawe, jeśli ten sam tekst pojawi się po raz drugi, jego czcionka automatycznie zmienia kolor na złoty.
+    [Spis Treści]
+        Spis Treści to specjalny blok, który pojawia się na każdej stronie i jest umiejscowiony po środkowej lewej stronie. Blok ten zawiera kilka kategorii, których użytkownik może przeglądać i scrollować przy pomocy myszy. Po kliknięciu na nazwę tekstu w wybranej kategorii, w bloku głównym wyświetlana jest zawartość powiązana z tym tekstem. Więcej informacji o samym bloku głównym znajduje się pod tym tekstem.
+    [Zawartość]
+        Blok Główny to specjalny blok, który pojawia się na każdej stronie, a tekst, który właśnie czytasz, znajduje się właśnie w nim. W tym bloku wyświetlane są treści powiązane z kategoriami zawartymi w Spisie Treści. Czasami treści w Bloku Głównym mogą zawierać załączniki do podstron lub linków, które po kliknięciu przekierowują użytkownika do odpowiednich miejsc. Podobnie jak Spis Treści, Blok Główny można przewijać.
+    [Instrukcja]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[Aktualności]
+(spis nowości, ciekawych rzeczy, lub ogolnie wszystkiego nowego zwiazanego z brygadzistami)
+
+    [krótki opis aktualnosci]
+    [przyciski kierujące do danego tematu]
+
+    [Prezenter Tematu, Nazwa Tematu, Data wydania]
+    [Obraz, a niżej krótki opis]
+    [pod obrazem jakiś tekst jeszcze wymysle]
+    [po prawej caly opis]
+
+    (W tej zakładce, znajdziesz najnowsze i najciekawsze informacje związane z nami – Brygadzistami! Każdy temat to kolejna dawka nowości, wywiadów, wykładów oraz unikalnych historii. Wszystko stylizowane na gazetkach z nowościami, aby dostarczyć ci wiadomości w przystępnej i atrakcyjnej formie. Każdy news posiada swój obrazek, opis lub wywiad, byś mógł jeszcze bardziej zanurzyć się w świecie Brygadzistów. Wybierz interesujący Cię temat, klikając na jego nazwę poniżej lub po prostu przewijaj stronę, aby odkrywać kolejne historie. Pozostań na bieżąco z najważniejszymi wydarzeniami!)
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+[Aktualizacje]

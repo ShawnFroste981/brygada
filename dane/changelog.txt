@@ -1,0 +1,181 @@
+[1.2.1b]
+    Aktualności i Aktualizacje
+    8 grudnia 2024
+    Poprawkowa i uzupełniająca aktualizacja zawartości kategorii „Start” na stronie głównej. Koncentruje się na rozszerzeniu funkcjonalności wprowadzonej w poprzedniej aktualizacji o nowe elementy. Głównymi dodatkami było wdrożenie systemu aktualności oraz listy aktualizacji witryny. Do prawdopodobnie ostatnich zmian dla kategorii „Start” w 2024 roku można zaliczyć:
+
+    - Dodano nowe funkcjonalności dla strony indexu. Do nowej zawartości zaliczają się:
+        - Dodano dwie nowe sekcje dla kategorii Start:
+            - Aktualności (Najnowsze wydarzenia związane z Brygadzistami)
+            - Aktualizacje (Lista wszystkich zmian witryny)
+        - Dodano nowe obrazy, szczególnie w sekcji aktualności, aby uatrakcyjnić ich wygląd i treść
+        - Rozszerzono funkcjonalność spisu treści, umożliwiając przeniesienie użytkownika na początek danej sekcji po kliknięciu w jej nazwę
+        - Dodano nową listę specjalnych zdań do bazy danych BTXT
+    - Zmiany techniczne i wizualne dla strony indexu. Do zaktualizowanej zawartości zaliczają się:
+        - Poprawiono daty genezy strony
+        - Skorygowano błędy słowne w sekcji poradnikowej
+        - Naprawiono numerację wersji strony, dostosowując ją do nowego systemu nazewnictwa
+    - Dodano nowy folder z filmami, umożliwiający lepsze zarządzanie materiałami wideo
+    - Przeniesiono foldery starszej wersji strony głównej wraz z podstronami do specjalnie dedykowanego katalogu, ułatwiając organizację plików
+    - Zaktualizowano pliki lokalne
+    - Oraz mniejsze zmiany
+
+[1.2.1a]
+    Informacje i Instrukcje
+    16 października 2024
+    Aktualizacja zawartości kategorii „Start” na stronie głównej. Skupia się głównie na informacjach o witrynie oraz instrukcjach dotyczących poruszania się po stronach. Co ciekawe, początkowy numer wersji wynosił [1.2.2], jednak ze względu na wprowadzenie mniejszych aktualizacji, system numeracji został zmodyfikowany, aby ułatwić odczytywanie numerów wersji. Do głównych zmian tej aktualizacji można zaliczyć:
+    
+    - Dodano nowe funkcjonalności dla strony indexu. Do nowej zawartości zaliczają się:
+        - Dodano dwie nowe sekcje dla kategorii Start:
+            - Informacje (Geneza i historia powstania witryny)
+            - Poradnik (Szczegółowe instrukcje dotyczące korzystania ze strony)
+        - Dodano nowe obrazy, szczególnie w sekcji poradnikowej, aby ułatwić zrozumienie instrukcji
+    - Zmiany techniczne i wizualne dla strony indexu. Do zaktualizowanej zawartości zaliczają się:
+        - Zmieniono wygląd dwóch tymczasowych obrazów, tak aby lepiej pasowały do estetyki witryny
+        - Zaktualizowano obrazy ukrytych przycisków, nadając im nowoczesny i bardziej funkcjonalny styl
+        - Skrypt losujący tekst z bazy danych otrzymał oficjalną nazwę: Brygadowy Tekścik (BTXT)
+        - Usunięto testową sekcję, która była dodana w poprzedniej aktualizacji
+    - Przeniesiono niektóre foldery do odpowiednich katalogów, poprawiając organizację plików i porządek w plikach
+    - Naprawiono błędy, które pojawiły się od wydania poprzedniej aktualizacji, poprawiając stabilność i działanie strony
+    - Zaktualizowano pliki lokalne
+    
+[1.2.1]
+    Ulepszony Index
+    12 października 2024
+    Mniejsza aktualizacja, skupiająca się głównie na wyglądzie strony głównej oraz naprawie błędów z poprzedniej wersji witryny. Nazewnictwo aktualizacji zostało nieco zmienione ze względu na plan wprowadzenia wersji [1.3] z pełnym zestawem nowych funkcji, przy jednoczesnej możliwości publikowania mniejszych aktualizacji, aby utrzymać stronę aktywną. Do głównych elementów tej aktualizacji można zaliczyć:
+
+    - Dodano nowe funkcjonalności dla strony indexu. Do nowej zawartości zaliczają się:
+        - Dodano przycisk w lewym górnym rogu strony, umożliwiający przywrócenie strony index do poprzedniej wersji
+        - Dodano informacje o stronie, pod logiem tekstowym
+        - Dodano dwa tymczasowe obrazy:
+            - Pierwszy obraz znajduje się w lewym górnym rogu i przedstawia logo witryny
+            - Drugi obraz jest umieszczony w bloku głównym i pojawia się po uruchomieniu witryny
+        - Dodano spis treści, zawierający pięć głównych kategorii:
+            - Start
+            - Opowieści
+            - Gierki
+            - Skrypty
+            - Media Społecznościowe
+        - Dodano specjalny blok główny, który wyświetla zawartość wybranej sekcji
+        - Dodano testową sekcję, służącą do eksperymentowania z nowymi funkcjami i testowania przyszłych dodatków
+    - Zmiany techniczne i wizualne dla strony indexu. Do zaktualizowanej zawartości zaliczają się:
+        - Pomniejszono całą strukturę strony, mieszcząc wszystkie elementy w jednym widoku bez konieczności scrollowania
+        - Powiększono logo tekstowe Brygady
+        - Kolor tekstu wyświetlanego przez skrypt losujący został zmieniony na fioletowy
+        - Ukryte przyciski w prawym górnym rogu strony otrzymały ulepszenia:
+            - Dodano obramowanie, które poprawia ich widoczność
+            - Po najechaniu myszką na przyciski, pojawia się obraz prezentujący ich funkcje
+        - Ulepszono wygląd strony
+        - Ukryty nawigator został zastąpiony spisem treści, który jest teraz łatwiej dostępny i bardziej praktyczny
+        - Kategorie Novelki i Komiksy zostały połączone w jedną wspólną kategorię: Opowieści
+        - Informacje o wersji strony zostały rozszerzone o dodatkowe szczegóły, uwzględniając pełne oznaczenie wersji (1.2 => 1.2.1)
+        - Informacja o autorze teraz zawiera aktywny link do maila
+        - Legenda strony została usunięta i zastąpiona instrukcją, która obecnie jest niefunkcjonalna
+    - Dodano nowe podfoldery, przeznaczone do przechowywania ważnych danych, które później są wykorzystywane na witrynie
+    - Naprawiono błędy, które pojawiły się od wydania poprzedniej aktualizacji, poprawiając stabilność i działanie strony
+    - Zaktualizowano pliki lokalne
+
+[1.2.0]
+    Urodzinowa Jedyneczka
+    5 października 2024
+    Druga i zdecydowanie największa aktualizacja strony w 2024 roku. Premiera tej aktualizacji miała miejsce w dniu urodzin „tego pierwszego” i z tej okazji miała wprowadzić w pełni funkcjonalny system komiksowy. Ostatecznie jednak do tej wersji strony dodano również wiele innych elementów. Lista nowości nie zawiera wszystkich zmian, ale przedstawia ich zdecydowaną większość. Do zawartości tej aktualizacji można definitywnie zaliczyć:
+
+    - Dodana strona visage. Poniżej szczegóły dotyczące zawartości:
+        - Na stronie visage treści zostały uporządkowane w pięciu odrębnych sekcjach:
+            - Ostrzeżenie
+            - Biblioteka
+            - Galeria
+            - FAQ
+            - Info+
+        - Dodano ostrzeżenie zachęcające do odpowiedzialnego zapoznania się z jego zawartością
+        - Dodano pierwszy (nieukończony) rozdział komiksu. Komiks zawierał następujące elementy:
+            - Dodano specjalną stronę komiksową pełniącą funkcję systemu przeglądania komiksów. Strona została rozwinięta na podstawie wcześniejszego testu systemu komiksowego
+            - Dodano 17 unikalnych obrazów komiksowych
+            - Dodano specjalny skrypt umożliwiający wygodne przeglądanie komiksu z różnymi dodatkowymi funkcjami
+        - Dodano specjalną galerię obrazów związanych z visage. Galeria zawierała następujące elementy:
+            - Dodano tabelę oraz jeden duży obraz
+            - Dodano 31 specjalnych obrazów
+            - Dodano specjalny skrypt umożliwający obejrzenie obrazu w większej okazałości i przeglądania innych obrazów
+        - Dodano FAQ (Frequently Asked Questions)
+        - Dodano listę dodatkowych informacji o projekcie
+    - Dodana strona alergic boy. Poniżej szczegóły dotyczące zawartości:
+        - Na stronie alergic boy treści zostały uporządkowane w pięciu odrębnych sekcjach:
+            - Ostrzeżenie
+            - Biblioteka
+            - Pies?
+            - FAQ
+            - Info+
+        - Dodano ostrzeżenie zachęcające do odpowiedzialnego zapoznania się z jego zawartością
+        - Dodano prolog projektu, przedstawiający wstępne informacje i wprowadzający w tematykę projektu
+        - Dodano prosty skrypt obrazowy
+        - Dodano FAQ (Frequently Asked Questions)
+        - Dodano listę dodatkowych informacji o projekcie
+    - Dodano nowe funkcjonalności dla każdej strony. Do nowej zawartości zaliczają się:
+        - Dodano ukryty nawigator, znajdujący się w lewej górnej części strony, umożliwiający szybsze przemieszczanie się między sekcjami strony
+        - Dodano ukryte przyciski w prawej górnej części strony. Przyciski pełniły następujące funkcje:
+            - Pierwszy przycisk umożliwiał szybkie odświeżenie strony po jego naciśnięciu
+            - Drugi przycisk pozwalał na powrót do strony głównej jednym kliknięciem
+        - Dodano krótkie przywitanie, pojawiające się na każdej stronie, które zachęca użytkowników do zapoznania się z zawartością witryny
+        - Dodano legendę umieszczoną na dole każdej strony. Legenda informuje o znaczeniu specjalnych znaków i symboli używanych na stronie
+        - Dodano dodatkową informację w sekcji bibliotekowej, o dostępności danej wersji (PDF, lektor, komiks)
+        - Dodano sekrety
+    - Dodano nowe funkcjonalności dla indexu. Do nowej zawartości zaliczają się:
+        - Dodano skrypt losujący tekst, który pobiera losowy fragment z bazy danych i wyświetla go na stronie, oferując użytkownikom dynamiczną zawartość przy każdym odświeżeniu strony
+        - W indexie treści zostały uporządkowane w pięciu odrębnych sekcjach:
+            - Novelki
+            - Komiksy
+            - Inne (Media społecznościowe)
+        - Dodano listę mediów społecznościowych, pozwalającą użytkownikom łatwo śledzić najnowsze informacje i treści publikowane przez Brygadzistów na platformach społecznościowych
+    - Dodano nowe funkcjonalności dla smoczych jaj. Do nowej zawartości zaliczają się:
+        - Na stronie smocze jaja treści zostały uporządkowane w pięciu odrębnych sekcjach:
+            - Ostrzeżenie
+            - Biblioteka
+            - Galeria (nowość)
+            - FAQ (nowość)
+            - Info+ (w miare nowe)
+        - Dodano nowy rozdział w formacie PDF
+        - Dodany nowy odcinek lektorowy
+        - Dodano opcję komiksową, która nie jest jeszcze dostępna do przeglądania, ale planowana do uruchomienia w przyszłości
+        - Dodano specjalną galerię obrazów związanych z smoczymi jajami. Galeria zawierała następujące elementy:
+            - Dodano tabelę
+            - Dodano 30 specjalnych obrazów
+            - Dodano specjalny skrypt umożliwający obejrzenie obrazu w większej okazałości i przeglądania innych obrazów
+        - Dodano FAQ (Frequently Asked Questions)
+        - Dodano listę dodatkowych informacji o projekcie
+    - Zmiany techniczne i wizualne w indexie oraz w smoczych jajach. Do zaktualizowanej zawartości zaliczają się:
+        - Powiększono logo tekstowe Brygady
+        - Powiększono oraz ulepszono wygląd stron
+        - Zmieniono lekko kolorystykę stron
+    - Zmiany techniczne i wizualne dla strony smoczych jaj. Do zaktualizowanej zawartości zaliczają się:
+        - Przeniesiono informacje o autorze, produktach, liście nawiązań oraz informacje prawne do sekcji Info+, poprawiając organizację i klarowność treści
+    - Usunięto pseudo-stronę visage oraz test komiksowy, zastępując je pełnoprawnymi implementacjami i lepiej zorganizowanymi rozwiązaniami
+    - Dodano nowe podfoldery, ułatwiając nawigację i zarządzanie plikami w projekcie
+    - Zaktualizowano wszystkie stare foldery, dostosowując ich zawartość do obecnych standardów i struktury plików
+    - I wiele, wiele więcej
+
+[1.1.0]
+    Pierwsza aktualizacja i publikacja strony
+    7 czerwca 2024
+    Oficjalna publikacja oraz pierwsza aktualizacja strony obejmowała głównie poprawki wizualne oraz kluczowe nowości, takie jak wdrożenie systemu komiksowego dla Visage. Do głównych elementów zawartości należały:
+
+    - Dodana pseudo-strona visage, ukazująca obraz Izel
+    - Dodana strona testowa dla systemu komiksowego. Do samej strony również zostały uwzględnione:
+        - Wprowadzono nowy styl CSS
+        - Dodano testowe obrazy komiksowe
+        - Dodano skrypt komiksowy
+    - Zaktualizowano HTML i CSS dla indexu oraz smoczych jaj
+    - Dodano podfoldery pod smocze jaja oraz visage
+    - Dodano ostrzeżenie oraz dodatkowe informacje dla smoczych jaj
+
+[1.0.0]
+    Pierwsze koncepty
+    6 czerwca 2024
+    Była to pierwsza konceptowa wersja strony, w której testowano głównie jej funkcjonalność oraz potencjał na oficjalne wdrożenie. Do głównych elementów zawartości należały:
+    
+    - Zbudowana baza strony
+    - Dodana strona index. Do samej strony również zostały uwzględnione:
+        - Wprowadzono nowy styl CSS
+        - Dodano obrazy
+    - Dodana strona smocze jaja. Do samej strony również zostały uwzględnione:
+        - Wprowadzono nowy styl CSS
+        - Dodano obrazy
+    - Wgrano pliki PDF związane z tematyką Smoczych Jaj
