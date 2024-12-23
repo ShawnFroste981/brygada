@@ -82,8 +82,8 @@
 
         <main>
             <div class="main-default" id="main-default">
-                <img src="obrazy/brygada.png" alt="brygada">
-                <h1>Witamy na stronie głównej!</h1>
+                <img src="obrazy/crismas.png" alt="crismas" id="crismas-image">
+                <h1>Wesołych Świąt!</h1>
                 <p>Wybierz kategorię, którą chcesz obczaić.</p>
                 <p>Kliknij na załącznik, aby przejść dalej i dowiedzieć się więcej.</p>
                 <p>Nie gryziemy, jeszcze.</p>
@@ -680,6 +680,10 @@
         </div>
     </footer>
 
+    <div class="snow-effect">
+        <img src="obrazy/snow.gif" alt="Snow GIF">
+    </div>
+
     <!-- Btxt Topic -->
     <script id="btxt-topic">
         const messages = [
@@ -917,11 +921,12 @@
             "Życzymy Ci wszystkiego, co najlepsze"
         ];
     
-        let specialX = 0; // Jeżeli specjalny event, 1
+        let specialX = 1; // Jeżeli specjalny event, 1
         let allMessages = [...messages];
     
         if (specialX === 1) {
             specialMessages.forEach(special => {
+                allMessages.push(special);
                 allMessages.push(special);
                 allMessages.push(special);
             });
@@ -973,6 +978,14 @@
                     showDiv(`main-${id}`);
                 });
             });
+        });
+    </script>
+
+    <script id="main-crissmas">
+        const crismasImage = document.getElementById('crismas-image');
+        
+        crismasImage.addEventListener('click', () => {
+            window.open('obrazy/crismas24.png', '_blank');
         });
     </script>
 </body>
