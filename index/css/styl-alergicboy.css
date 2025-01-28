@@ -373,7 +373,7 @@ main p{
 }
 
 .stan-produkcji{
-    color: rgb(3, 255, 3);
+    color: rgb(209, 255, 3);
 }
 
 footer{
@@ -397,21 +397,4 @@ footer{
 
 .secret:hover {
     opacity: 1; /* Make the image visible when hovered */
-}
-
-.snow-effect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none; /* Disable interaction with the GIF */
-}
-
-.snow-effect img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the GIF covers the area */
-    opacity: 0.4; /* Adjust transparency of the snow effect */
 }

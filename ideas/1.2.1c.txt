@@ -1,0 +1,125 @@
+*- logo w końcu dodać
+    *- dla favicona
+    *- dla logo (moze commision art od daniela - bryga)
+*- nowe zdania dla btxt?
+
+*- zmienic logo indexu (roblox na swiateczny obraz)
+*- zmienic opis indexu (od brygady dla brygady)
+*- zaktualizowac zawartosc informacji [bardziej tresciwe oraz wizualnie podobne do reszty]
+    *- Co to za strona jako wstęp
+    [
+        „Brygada” to witryna stworzona przez tego drugiego we współpracy z Brygadzistami.
+        Jest to hobbystyczny projekt, którego celem jest archiwizacja oraz udostępnianie twórczości związanej z naszą trójką Brygadzistów.
+        Witryna powstała, aby gromadzić i prezentować nasze kreatywne dzieła w różnych formach.
+        Posiadamy mnóstwo treści oraz rozbudowaną historię, która wciąż się rozwija.
+        W tej zakładce dowiesz się więcej o witrynie i o nas - Brygadzistach.
+        Życzymy miłej lektury!
+    ]
+    *- Główna zawartosc
+        - Geneza
+        [
+            Prace nad konceptem i projektem witryny rozpoczęły się 6 czerwca 2024 roku, a pierwsza funkcjonalna i akceptowalna wersja została opublikowana 7 czerwca 2024 roku.
+            Początkowym celem było udostępnienie novelki „Smocze Jaja” oraz systemu komiksowego dla „Visage”.
+            Z czasem witryna zaczęła otrzymywać coraz więcej poprawek, co wzbudziło regularność w jej rozwoju.
+            Dzięki temu, poza poprawkami, zaczęto wprowadzać również ulepszenia wizualne oraz techniczne w kodzie witryny.
+            Z pierwotnego planu prostej archiwizacji naszych projektów przeszliśmy do bardziej oficjalnego podejścia do tworzenia witryny.
+            Dlatego, jesteśmy tu, gdzie jesteśmy.
+        ]
+        *- Zawartość
+        [
+            Ewolucja witryny pozwoliła na znaczące rozszerzenie zawartości tego początkowo prostego projektu.
+            Oferujemy treści informacyjne dotyczące samej witryny oraz zagadnień związanych z Brygadzistami.
+            Dysponujemy bogatą biblioteką twórczości novelowej oraz komiksowej.
+            Udostępniamy również unikalną bibliotekę prostych gier i skryptów.
+            Zarządzamy naszymi mediami społecznościowymi, które możesz także tutaj sprawdzić.
+            To wszystko i wiele więcej czeka na Ciebie do odkrycia.
+        ]
+        *- Zespół
+        [
+            Brygada to nie tylko witryna, ale także zespół, który dostarcza treści, jakie możesz zobaczyć dzisiaj.
+            „Ten Pierwszy” – Grafik, twórca „Visage” oraz ikona Brygadzistów (obok Brygi).
+            „Ten Drugi” – Autor witryny, skryptów, gier oraz dzieł takich jak „Smocze Jaja” i „Shitpost”.
+            „Ten Trzeci” – Trzecie koło u wozu, z niezniszczalną chęcią do pracy, który również tworzy własne modele i projekty.
+            Oraz inni, którzy pomagali przy testowaniu witryny i zgłaszali błędy występujące na stronach.
+            Nie przyjmujemy więcej osób – kończy się miejsce w piwnicy!
+        ]
+        *- Osiągnięcia
+        [
+            Możemy również pochwalić się naszymi osiągnięciami zdobytymi w trakcie pracy nad tą witryną.
+            Nasza witryna otrzymała kiedyś nieistniejącą nagrodę w nieistniejącym konkursie za nieistniejącą kategorię najlepszej witryny w Toruniu.
+            Jedna z dużych aktualizacji nie zajęła nam 5 lat pracy.
+            Kiedyś pani z rynku stwierdziła, że przystojni z nas kawalerzy.
+            Ehm... no cóż.
+            Lista jest naprawdę długa, ale nie chcemy Was zanudzać. Chyba rozumiecie, prawda?
+        ]
+*- zaktualizowac info w poradniku o upraszczatorze [nie zmieniac ze nie dziala ale bez tego koncowego]
+*- zmienic znaki '' na " wiadomo (na koncu poradnika jest jedne)
+*- nowe tematy w newsach
+    *- nowe newsy?! JAK TO TO ONE SIE ZMIENIAJĄ
+    *- swięta (i moze nowy rok)
+    *- film?
+    *- walka yomi
+    *- unturned
+- nowa aktualizacja zapisana
+
+*- [novelki] i [JUZ WKROTCE] usunąć
+*- smocze jaja oraz alergicboy link
+*- niedostepna zawartosc (3, kłutka, wiadomo co dalej i wiecej informacji w instrukcji)
+
+*- zaktualizowac wersje strony
+*- koncept instrukcji? (zapisane np kim jest bryga, -X- [alergic boy], zawartosc niedostepna co to, )
+    Warning ze beta
+        Uwaga!
+        To wczesna wersja tej funkcji – mogą występować błędy.
+        Wciśnij ESC, aby zamknąć instrukcję,
+        lub kliknij ten tekst.
+    Informacja o Instrukcji
+        Znajdujesz się w dawno zaplanowanej i świeżo wdrożonej instrukcji stronowej.
+        Jest to poradnik witrynowy, bardziej skoncentrowany na zawartości poszczególnych stron niż na samej głównej witrynie.
+        Podczas gdy poradnik strony głównej skupiał się na wyjaśnieniu podstawowych funkcji bloków, tekstów i przycisków,
+        instrukcje te będą bardziej ukierunkowane na tłumaczeniu pojęć oraz treści znajdujących się bezpośrednio na stronach.
+        Każda strona po liftingu otrzyma też własną instrukcję, zawierającą najważniejsze terminy i informacje.
+
+        Wygląd oraz zawartość instrukcji mogą się zmieniać z czasem.
+        Prosimy więc o wyrozumiałość, jeśli szukane przez Ciebie pojęcie nie znajduje się jeszcze w tym miejscu.
+        W ramach wsparcia przy tworzeniu instrukcji użytkownika, wszelkie pomysły oraz sugestie prosimy kierować na oficjalny adres e-mail witryny. ( bry.ga.da.14.41@gmail.com )
+    Div
+        Niedostępna Zawartość 
+            (Występuje w kategorii Opowieści)
+            Zawartość, do której użytkownicy obecnie nie mają dostępu.
+            Jednak może ona zostać odblokowana w przyszłości, po kolejnych aktualizacjach.
+            Na chwilę obecną tylko jedna sekcja zawiera taką informację,
+            ale w przyszłości pojawi się ich więcej, a z czasem większość stanie się dostępna.
+        -X-
+            (Występuje w kategorii Opowieści, w sekcji Alergic Boy)
+            „Nieokreślona liczba”
+            „Nieokreślona jednostka liczbowa w danym okresie czasowym”
+        Bryga
+            Wirtualna asystentka oraz dyrektor witryny.
+            Prawa ręka prezesa witryny Brygady.
+            Bryga została stworzona przez prezesa Jakuba i od razu przypisana do jego firmy,
+            by wspierać jego działalność oraz pomagać w budowie strony.
+            Zajmuje się wsparciem technicznym oraz komunikacyjnym w siedzibie.
+            Bryga zawsze podchodzi do swoich zadań z pełnym profesjonalizmem.
+            Jest punktualna, zorganizowana i skupiona na realizacji powierzonych jej obowiązków.
+            Nie pozwala sobie na niepotrzebne emocje ani prywatne wtrącenia podczas pracy.
+            Choć jest profesjonalistką, zdarza jej się podchodzić do zadań z lekkim lenistwem.
+            Nie oznacza to jednak zaniedbywania obowiązków – Bryga zawsze doprowadza swoje zadania do końca,
+            choć czasem nie obywa się bez cichego narzekania.
+
+*- poradnik zaktualizować z instrukcją
+    *- zdjecie zaktualiozowac (teskt trzeba na czerwowno)
+
+    Instrukcja to specjalna funkcja tekstowa, która znajduje się na każdej stronie i zawiera wyjaśnienia pojęć związanych z daną sekcją. 
+    Po naciśnięciu na obramowanie lub ikonę notesu pojawi się dodatkowy blok instrukcji, przyciemniający resztę strony. 
+    Blok instrukcji zawiera ostrzeżenie dotyczące wczesnego dostępu, krótką informację wstępną o samej instrukcji, listę pojęć pomocnych dla użytkowników, którzy nie rozumieją danego tekstu. 
+    Wyjście z instrukcji można wykonać na kilka sposobów, czy to naciskając klawisz ESC, klikając na tekst informujący o wyjściu, lub nawet klikając w dowolne miejsce poza blokiem instrukcji.
+    UWAGA! 
+    Funkcja ta została dopiero co wdrożona. 
+    Więcej informacji znajdziesz w samej instrukcji.
+
+*- stworzyc kanal brygady + link ( https://www.youtube.com/@Brygada-14 )
+*- zaktualizować zawartość z starego indexu
+    *- smocze jaja i alergic boy [stan produkcji]
+    *- alergic boy data modyfikacji 14 lipca 2024
+

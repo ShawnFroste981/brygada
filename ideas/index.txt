@@ -116,4 +116,23 @@ Obecnie na stronie znajduje się znacznie więcej niż początkowo planowałem. 
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-[Aktualizacje]
+[Novelki]
+(logo (załącznik do strony) i niżej mała instrukcja że nalezy kliknąć, krótki opis, opis zawartości (lista))
+
+    [informacje o projekcie]
+        Autor Projektu
+        Rodzaj Projektu
+        Recenzja Brygi
+        Stan Produkcji
+
+        Liczba Rozdziałów
+        Łączna Liczba Stron (LLS)
+        Język Docelowy
+        Oryginalny Twór
+
+        Prolog Opowieści
+        Wersja Lektorowa
+        Galeria
+        FAQ
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

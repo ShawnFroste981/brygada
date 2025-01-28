@@ -1,3 +1,45 @@
+[1.2.1c]
+    Sekcje Novelowe
+    28 stycznia 2025
+    Pierwsza aktualizacja w 2025 roku, skupiająca się na ulepszeniu zawartości opowieści, zwłaszcza w sekcji novelek, oraz poprawie niektórych istniejących treści. Sekcja „Novelki” została podzielona na osobne części, a każda z nich zyskała dodatkowe informacje na temat danej noveli. Dodatkowe zmiany otrzymała także sekcja „Informacje”, a w tej aktualizacji wdrożono pierwszą wersję instrukcji strony głównej. Do zmian wprowadzonych w tej aktualizacji można zaliczyć:
+
+    - Dodano nową zawartość na stronie głównej witryny. Do zawartości wprowadzonej można zaliczyć:
+        - Dodano trzy nowe sekcje w kategorii Opowieści:
+            - Smocze Jaja
+            - Alergic Boy
+            - 3 (Niedostępna Zawartość)
+        - Zaimplementowano wczesną wersję instrukcji, zawierającą:
+            - Ostrzeżenie tekstowe
+            - Informacje o instrukcji
+            - Trzy niewyjaśnione pojęcia
+            - Testowy wygląd wizualny
+            - Skrypt instrukcji
+            - Link do oficjalnego e-maila brygadowego
+    - Zmiany techniczne i wizualne na stronie głównej. Do zawartości zaktualizowanej można zaliczyć:
+        - Zmieniono ikonę witryny na bardziej oficjalną
+        - Zmieniono logo witryny z Mangora na „Bryge”
+        - Zmieniono obraz i opis dla domyślnego bloku głównego
+        - Zaktualizowano sekcję Informacje:
+            - Dodano nowe informacje wstępne
+            - Zaktualizowano genezę i zawartość
+            - Dodano Zespół oraz Osiągnięcia jako dwie nowe podsekcje
+        - Zaktualizowano sekcję Poradnik:
+            - Poprawiono tekst w poradniku
+            - Poprawiono obrazy instrukcji w poradniku
+            - Zaktualizowano informacje o instrukcji w poradniku
+        - Dodano pięć nowych tematów w Aktualnościach
+        - Usunięto zeszłoroczne tematy z Aktualności
+        - Zapisano nową aktualizację
+        - Zaktualizowano kategorię Opowieści:
+            - Przeniesiono zawartość z novelek do osobnych sekcji
+            - Usunięto sekcję Novelki oraz komunikat „JUŻ WKRÓTCE”
+            - Zmieniono logo prezentacyjne dla obu novelek
+    - Zaktualizowano informacje o stanie produkcji novelek
+    - Zaktualizowano datę ostatniej aktualizacji dla Alergic Boy
+    - Usunięto stare, nieużywane pliki z względu na nowy rok
+    - Zaktualizowano pliki lokalne
+    - Oraz wprowadzono drobne lub ukryte zmiany
+    
 [1.2.1b]
     Aktualności i Aktualizacje
     8 grudnia 2024
