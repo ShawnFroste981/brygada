@@ -1,0 +1,99 @@
+- poprawic tresci w poradniku
+    *- styl css na początku
+
+    *- dodatkowe ostrzeżenie po "Więc po co męczyć się z problemami, skoro możesz mieć ich mniej."
+        - Informacje o zawartości oraz ich lokalizacji mogą być nieklarowne w przypadku starszych wersji stron, na przykład z powodu braku funkcji Upraszczatora oraz Instrukcji.
+
+    *- upraszczator
+    (image trzeba zaktualizować)
+    Upraszczator to specjalna funkcja w formie przycisku, dostępna wyłącznie na stronie głównej, umożliwiająca uproszczenie wizualne strony.
+    Po najechaniu kursorem na ukazujący się obraz i kliknięciu, użytkownik zostaje przeniesiony do uproszczonej wersji strony – zarówno pod względem wyglądu, jak i zawartości.
+    Uproszczona wersja oferuje minimalistyczny design oraz łatwiejszy dostęp do najważniejszych kategorii, 
+    co czyni ją idealnym rozwiązaniem dla użytkowników korzystających z urządzeń mobilnych lub napotykających problemy z wyświetlaniem pełnej wersji strony.
+    Dzięki temu użytkownicy mający trudności z wyświetlaniem strony lub natłokiem informacyjnym mogą wybrać bardziej przejrzystą wersję strony, co ułatwia dalsze przeglądanie zawartości.
+    UWAGA!
+    Funkcja nie została jeszcze zaimplementowana i przez dłuższy czas pozostanie niedostępna.
+    Więcej informacji można znaleźć w Instrukcji.
+
+    *- resetor
+    Resetor to specjalna funkcja w formie przycisku, dostępna na każdej stronie, umożliwiająca szybkie odświeżenie okna bez konieczności korzystania z opcji odświeżania w przeglądarce.
+    Po najechaniu kursorem na ukazujący się obraz i kliknięciu, aktualnie przeglądana strona zostaje natychmiast odświeżona.
+    Choć Resetor jest prostą funkcją, znacząco przyspiesza nawigację po stronie w porównaniu do manualnego odświeżania.
+    Podobnie jak Upraszczator, Resetor posiada zbliżony wygląd, lecz pełni całkowicie odmienną funkcję i znajduje się po przeciwnej stronie ekranu.
+
+    *- brygadowy tekscik
+    Brygadowy Tekścik (w skrócie BTXT) to specjalna funkcja tekstowa, dostępna na każdej stronie, która wyświetla losowy tekst z puli znajdującej się w bazie danych aktualnej strony.
+    Za każdym razem, gdy strona zostaje wyświetlona lub odświeżona, użytkownikowi pojawia się nowy, losowo wybrany tekst, a kolejne odświeżenie powoduje wylosowanie innego tekstu.
+    BTXT jest niewielkim, lecz charakterystycznym dodatkiem, którego celem jest uatrakcyjnienie ponownych wizyt na stronie oraz nadanie witrynie unikalnego charakteru.
+    Baza danych zawiera ponad 200 różnych tekstów, zróżnicowanych pod względem treści.
+    Korzystając z Resetora, użytkownik może szybko przeglądać kolejne wylosowane teksty.
+    Jeśli ten sam tekst pojawi się ponownie, jego czcionka automatycznie zmienia kolor na złoty, sygnalizując powtórkę.
+
+    *- spis tresci
+    (image trzeba zaktualizować)
+    Spis Treści to specjalny blok podziału, obecny na każdej stronie, zawierający listę kategorii oraz sekcji przypisanych do danej kategorii.
+    Użytkownik może przeglądać zawartość Spisu Treści, przewijając listę za pomocą myszy, gdy kursor znajduje się w jej obrębie.
+    Kliknięcie na nazwę tekstu w wybranej kategorii powoduje wyświetlenie powiązanej zawartości w Bloku Głównym.
+    Jeśli kursor myszy znajdzie się na tekście sekcji, kolor czcionki zostanie zmieniony na złoty.
+    W niektórych sekcjach, które posiadają możliwość przewijania zawartości, kliknięcie na złoty tekst automatycznie przenosi użytkownika na samą górę sekcji.
+    W sekcjach niewymagających przewijania, złoty tekst pełni wyłącznie funkcję ozdobną.
+    
+    *- blok główny
+    (image trzeba zaktualizować, na zapetlający sie blok główny)
+    Blok Główny to specjalny blok podziału, obecny na każdej stronie, w którym wyświetlana jest aktualnie przeglądana zawartość.
+    Domyślna zawartość Bloku Głównego pojawia się automatycznie po odświeżeniu strony, a zmiana sekcji za pomocą Spisu Treści powoduje wczytanie nowej zawartości, odpowiadającej wybranej sekcji.
+    Treści w Bloku Głównym mogą zawierać załączniki do podstron lub linki, które po kliknięciu przekierowują użytkownika do innych stron, okien lub zewnętrznych witryn.
+    Podobnie jak Spis Treści, Blok Główny posiada funkcję przewijania, gdy jego zawartość przekracza dostępne miejsce.
+
+    -*- instrukcje
+    (jest to też przycisk XD)
+    [[[jak skończysz instrukcje udoskonalać]]]
+    Instrukcje to specjalna funkcja tekstowa, składająca się z bloku oraz przycisku, dostępna na każdej stronie, która zawiera objaśnienia pojęć związanych z aktualnie przeglądaną sekcją.
+    Po kliknięciu na obramowanie lub ikonę notesu, pojawia się dodatkowy blok podziału, który przyciemnia pozostałą część wizualnej zawartości strony.
+    Blok Instrukcji zawiera ostrzeżenie o wczesnym dostępie, krótką informację wstępną na temat funkcji oraz listę pojęć pomocnych dla użytkowników, którzy mogą nie rozumieć treści przypisanej do danej sekcji.
+    Wyjście z Instrukcji można wykonać na kilka sposobów, czy to naciskając klawisz ESC, klikając na tekst informujący o zamknięciu, lub wybierając dowolne miejsce poza blokiem Instrukcji.
+    UWAGA!
+    Funkcja nie została jeszcze w pełni zaimplementowana i jest dostępna w wersji wczesnego dostępu.
+    Więcej informacji można znaleźć w samej Instrukcji.
+
+*- nowe aktualnosci (mail, walentynki, praca, ssj4 canon?)
+*- nowa aktualizacja
+
+*- poprawic skrót lls na łls z novelek
+
+*- visage
+    - Komiks
+    - Ten Pierwszy
+    - Dark Fantasy
+    - Przerwa
+    
+    - Liczba rodziałow -> System Komiksowy
+    - (oblicz wtedy liczbe stron)
+    - Angielski
+    - YES
+
+    - prolog -> wersja elektroniczna YES
+    - wersja lektorowa -> wersja kolorystyczna YES
+    - YES
+    - NO
+
+*- przygotować niedostepno dla mojego komiksu
+-*- plebiscyt i glosowanie na komiks (przedstawienie planu, link do glosowania, lista kandydatow)
+*- usunąc [komiksy]
+
+*- smocze jaja (popracować troche)
+*- smocze jaja nazewnictwo arc na rodzialy i saga na arc (babunia arc)
+    *- w pdfach
+    *- chapter 1 zrobic system dialogowy
+    *- na stronie 1.2 smoczych jaj
+
+-*- btxt zrobić teksty kolejne (opowiesci i kreatywne)
+*- poprawic date utworzenia brygadzistów co jest w btxt
+
+*- zaktualizowac wersje strony
+*- mail tego drugiego zastąpic w indexie na brygadzistowy
+-*- może instrukcje ulepszyć
+* pierwsze koncepty sekretnej strony dla yt
+
+*- css posprawdzac pod wzgledem komentarzy
+*- dodac folder index w obrazach i po przenosic stuff (przyokazji pozmieniac w plikach przekierowania /images/index tp)

@@ -1,3 +1,38 @@
+[1.2.1d]
+    Poobcinane Sekcje Komiksowe
+    2 kwietnia 2025
+    Kolejna aktualizacja w 2025 roku, ponownie koncentrująca się na ulepszeniu zawartości opowieści, tym razem pod kątem komiksów oraz drobnych zmian w treściach opowieści i sekcji poradnikowej. Sekcja „Komiksy” została podzielona w podobny sposób jak „Novelki”, jednak w przeciwieństwie do novelek komiksy posiadają dwa wolne sloty, które w tej aktualizacji pozostały nietknięte. Ze względów technicznych oraz terminowych aktualizacja została podzielona na dwie części, a kolejna również skupi się na udoskonaleniu sekcji „Komiksy”, z możliwością wprowadzenia dodatkowych zmian do wcześniej zaimplementowanych elementów.
+
+    - Dodano nową zawartość na stronie głównej witryny. Do zawartości wprowadzonej można zaliczyć:
+        - Dodano trzy nowe sekcje w kategorii Opowieści:
+            - Visage
+            - 2 (Niedostępna Zawartość)
+            - ! (Niedostępna Zawartość)
+        - Dodano dodatkowe ostrzeżenie w poradniku o braku dostępności niektórych funkcji w starszych wersjach
+    - Zmiany techniczne i wizualne na stronie głównej. Do zawartości zaktualizowanej można zaliczyć:
+        - Zaktualizowano sekcję Poradnik:
+            - Zmieniono czcionkę i styl początkowego tekstu marketingowego
+            - Zaktualizowano zdjęcia przykładów dla Upraszczatora, Spisu Treści i Bloku Głównego
+            - Poprawiono błędną nazwę resetera na resetora
+            - Skorygowano opis funkcji dla Instrukcji
+            - Zaktualizowano zawartość informacyjną dla wszystkich przykładów
+        - Dodano cztery nowe tematy w Aktualnościach
+        - Poprawiono krawędzie okien informacyjnych dla wszystkich sekcji Startu, aby były mniej kwadratowe
+        - Wdrożono lekkie zmiany w plikach Smoczych Jaj
+            - Zmieniono nazewnictwo chapter → arc i odwrotnie
+            - Zaktualizowano pierwszy rozdział pod kątem systemu dialogowego
+            - Dostosowano starszą wersję Smoczych Jaj do nowej terminologii rozdziałów
+        - Usunięto sekcję Komiksy
+        - Poprawiono skrót Łącznej Liczby Stron z LLS → ŁLS
+        - Zaktualizowano logo prezentacyjne dla Visage
+        - Uaktualniono adres e-mail w linku do autora strony
+    - Wprowadzono małe poprawki do tekstów BTXT
+    - Ulepszono wizualny wygląd kodu w głównym arkuszu stylów
+    - Utworzono dodatkowy folder dla strony głównej, gdzie przeniesiono wszystkie obrazy związane wyłącznie z nią
+    - Stworzono specjalny folder dla sekretnych podstron strony głównej
+    - Zaktualizowano pliki lokalne
+    - Oraz wprowadzono drobne lub ukryte zmiany
+
 [1.2.1c]
     Sekcje Novelowe
     28 stycznia 2025

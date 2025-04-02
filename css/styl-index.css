@@ -215,7 +215,6 @@ nav ul > li {
     color: yellow;
 }
 
-
 /* */
 
 main {
@@ -246,6 +245,74 @@ main > div.active {
 #main-default {
     opacity: 1;
     visibility: visible;
+}
+
+/* */
+
+footer {
+    background-color: rgb(207, 130, 255);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    position: relative;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-text div {
+    margin: 0 50px;
+    text-align: center;
+}
+
+.footer-text h1{
+    font-family: 'Comic Sans MS';
+    color: black;
+}
+
+.footer-text p{
+    font-family: 'Courier New';
+    font-weight: bold;
+}
+
+.footer-text a{
+    text-decoration: none;
+    color: rgb(119, 0, 255);
+}
+
+.footer-autor {
+    margin: 0 50px;
+}
+
+.footer-opis p {
+    font-size: small;
+}
+
+.footer-opis-span {
+    cursor: pointer;
+    color: rgb(32, 32, 32);
+}
+
+.footer-secret {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1px;
+}
+
+.footer-secret-image {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.footer-secret-image:hover {
+    opacity: 1;
 }
 
 /* DEFAULT STYLE */
@@ -342,9 +409,28 @@ main > div.active {
     line-height: 1.5;
 }
 
+.main-poradnik-topic {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: oblique;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: white;
+    margin: 30px;
+    line-height: 1.5;
+}
+
+.main-poradnik-warning {
+    font-style: oblique;
+}
+
+.main-poradnik-warning-s {
+    color: lightgray;
+}
+
 .main-poradnik-img {
     height: 400px;
     border: 5px solid black;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -352,6 +438,7 @@ main > div.active {
     background-color: #ae00ff;
     max-width: 50%;
     border: 5px solid black;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     margin: 30px auto;
 }
@@ -461,6 +548,7 @@ main > div.active {
     max-width: 90%;
     margin: 30px auto;
     border: 5px solid black;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -582,6 +670,7 @@ main > div.active {
     margin: 30px auto;
     padding: 10px;
     border: 5px solid black;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -626,7 +715,7 @@ main > div.active {
     background: url(https://steamcdn-a.akamaihd.net/apps/tf2/blog/images/blog_arrow.png) no-repeat 0px 3px;
 }
 
-/* SMOCZE JAJA */
+/* SMOCZE JAJA STYLE */
 
 .main-smoczejaja {
     font-family: 'Comic Sans MS';
@@ -726,7 +815,7 @@ main > div.active {
     border-radius: 10px;
 }
 
-/* ALERGIC BOY */
+/* ALERGIC BOY STYLE */
 
 .main-alergicboy {
     font-family: 'Comic Sans MS';
@@ -921,7 +1010,212 @@ main > div.active {
     border-radius: 10px;
 }
 
-/* OPOWIEŚCI */
+/* VISAGE */
+
+.main-visage {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.main-visage-div{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    float: left;
+}
+
+.main-visage-div-left {
+    margin: 15px auto;
+    background-color: #3a8d25;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.main-visage-div-left th {
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.main-visage-div-left td {
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.main-visage-div-left tr{
+    background-color: #000000;
+}
+
+.main-visage-div-left tr:hover{
+    background-color: #464646;
+}
+
+.main-visage-div img {
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-visage-div p {
+    font-family: 'Arial';
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: #3a8d25;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 55%;
+    background-color: #464646;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.main-visage-div h1 {
+    font-family: 'Calibri';
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 60%;
+    background-color: #464646;
+    padding: 5px;
+    margin: 20px auto;
+}
+
+.main-visage-div-right-A {
+    width: 50%;
+    float: left;
+    margin: 10px auto;
+    background-color: #acacac;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.main-visage-div-right-B {
+    width: 50%;
+    margin: 15px auto;
+    background-color: #acacac;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+/* [ BFC2 ] */
+
+.main-bfc2 {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.main-bfc2-div{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    float: left;
+}
+
+.main-bfc2-div-left {
+    margin: 15px auto;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.main-bfc2-div-left th {
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.main-bfc2-div-left td {
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.main-bfc2-div-left tr{
+    background-color: #000000;
+}
+
+.main-bfc2-div img {
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.main-bfc2-div p {
+    font-family: 'Arial';
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: #e0e0e0;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 55%;
+    background-color: #464646;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.main-bfc2-div h1 {
+    font-family: 'Calibri';
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 60%;
+    background-color: #464646;
+    padding: 5px;
+    margin: 20px auto;
+}
+
+.main-bfc2-div-right-A {
+    width: 50%;
+    float: left;
+    margin: 10px auto;
+    background-color: #acacac;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.main-bfc2-div-right-B {
+    width: 50%;
+    margin: 15px auto;
+    background-color: #acacac;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+/* [ BFC3 ] */
+
+.main-bfc3 {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/* [OPOWIEŚCI] */
 
 .main-opowiesci-TQ {
     font-family: 'Arial';
@@ -955,42 +1249,6 @@ main > div.active {
 
 #main-TA-icon {
     font-size: large;
-}
-
-/* KOMIKSY STYLE */
-
-.main-komiksy {
-    font-family: 'Comic Sans MS';
-    text-align: center;
-}
-
-.main-komiksy table{
-    background-color: #272424;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border: 3px solid black;
-    margin: 30px auto;
-    font-size: 25px;
-}
-
-.main-komiksy table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.main-komiksy table th {
-    background-color: #42264f;
-    color: white;
-}
-
-.main-komiksy table tr{
-    color: white;
-    background-color: #2f2f2f;
-}
-
-.main-komiksy table tr:hover{
-    background-color: #dadada;
-    color: black;
 }
 
 /* SOCIAL MEDIA STYLE */
@@ -1057,75 +1315,7 @@ main > div.active {
     border: 3px solid black;
 }
 
-/* */
-
-footer {
-    background-color: rgb(207, 130, 255);
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-    position: relative;
-}
-
-.footer-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.footer-text div {
-    margin: 0 50px;
-    text-align: center;
-}
-
-.footer-text h1{
-    font-family: 'Comic Sans MS';
-    color: black;
-}
-
-.footer-text p{
-    font-family: 'Courier New';
-    font-weight: bold;
-}
-
-.footer-text a{
-    text-decoration: none;
-    color: rgb(119, 0, 255);
-}
-
-.footer-autor {
-    margin: 0 50px;
-}
-
-.footer-opis p {
-    font-size: small;
-}
-
-.footer-opis-span {
-    cursor: pointer;
-    color: rgb(32, 32, 32);
-}
-
-.footer-secret {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 1px;
-}
-
-.footer-secret-image {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.footer-secret-image:hover {
-    opacity: 1;
-}
-
-/* instrukcje */
+/* [INSTRUKCJE] */
 
 .bonus-footer-instrukcje {
     position: fixed;
@@ -1138,9 +1328,9 @@ footer {
     z-index: 1000;
     color: white;
     background-image: url("../obrazy/notebook.png");
-    background-size: 100% auto; /* Szerokość na 100%, wysokość automatyczna dla linii */
-    background-repeat: repeat-y; /* Powtarzanie tylko w pionie */
-    background-position: top center; /* Wyrównanie do góry na środku */
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: top center;
     overflow-y: auto;
     scrollbar-width: thin;
     padding: 20px;

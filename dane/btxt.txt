@@ -158,7 +158,7 @@
             "Kochać mężczyzn",
             "Kochaj bliźniego swego jak siebie samego",
             "Kocham opierdalać męskie pały",
-            "7 lipca 2024",
+            "7 czerwca 2024",
             "Jutro będzie kolejny dzień",
             "Jesteś tu tylko po to, aby sprawdzić co gadam?",
             "Widzę cię Pola",
@@ -242,11 +242,31 @@
             "Życzymy Ci wszystkiego, co najlepsze"
         ];
 
+"THE BRYGADA",
+"Broke Brygadzista Detection Software",
 "Ciekawostka: [OPOWIEŚCI]",
+"Ciekawostka: [O SAMEJ STRONIE]",
+
+
+
+
+
+
+
+
+
+
+
+
+
 "Ciekawostka: [GIERKI]",
 "Ciekawostka: [GIERKI]",
 "Ciekawostka: [SKRYPTY]",
 "Ciekawostka: [SKRYPTY]",
 "Ciekawostka: [MEDIA]",
 "Ciekawostka: [MEDIA]",
+"Ciekawostka: [INSTRUKCJE]",
+"Ciekawostka: [MAIL]",
+"Ciekawostka: [O SAMEJ STRONIE]",
+"Ciekawostka: [O SAMEJ STRONIE]",
 "Ciekawostka: [O SAMEJ STRONIE]",
