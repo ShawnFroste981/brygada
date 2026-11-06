@@ -1,0 +1,1370 @@
+/* =====================================================================
+   CYFROWA FILMOTEKA — Retro VHS Theme
+   Layout shell + collapse-to-strip toggles + nav controls + video grid
+   ===================================================================== */
+
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- ROOT TOKENS ---------- */
+:root {
+    /* Neon palette */
+    --c-bg:        #0a0a0a;
+    --c-panel:     #0d0d0f;
+    --c-green:     #39ff14;
+    --c-magenta:   #ff2d95;
+    --c-cyan:      #00e5ff;
+    --c-amber:     #ffb000;
+    --c-text:      #e6ffe6;
+    --c-text-dim:  #5a8a5a;
+
+    /* Platform brand-ish neon colors */
+    --c-youtube:   #ff3b3b;
+    --c-cda:       #3b9eff;
+    --c-rumble:    #85e03b;
+
+    /* Per-area accents */
+    --accent-header: var(--c-magenta);
+    --accent-nav:    var(--c-green);
+    --accent-main:   var(--c-cyan);
+    --accent-footer: var(--c-amber);
+
+    /* Collapsed strip sizes */
+    --strip-h: 3.5vh;   /* header / footer collapsed height */
+    --strip-w: 5vw;     /* nav collapsed width (room for label + toggle) */
+
+    /* Toggle button size */
+    --toggle-size: 3vh;
+
+    /* Fonts */
+    --font-mono:    'Share Tech Mono', 'Courier New', monospace;
+    --font-display: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
+
+    /* Transition */
+    --t-collapse: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- LIGHT THEME ---------- */
+/* Applied when <html data-theme="light">. All variables are overridden;
+   the rest of the CSS uses var(--c-*) so it adapts automatically. */
+[data-theme="light"] {
+    --c-bg:        #e8e8e8;
+    --c-panel:     #f4f4f4;
+    --c-green:     #008800;
+    --c-magenta:   #cc1188;
+    --c-cyan:      #0088aa;
+    --c-amber:     #aa6600;
+    --c-text:      #1a1a1a;
+    --c-text-dim:  #666666;
+
+    --c-youtube:   #cc0000;
+    --c-cda:       #0066cc;
+    --c-rumble:    #449944;
+}
+
+[data-theme="light"] .crt-overlay {
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.05) 0px,
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+}
+
+[data-theme="light"] .crt-vignette {
+    background: radial-gradient(
+        ellipse at center,
+        transparent 65%,
+        rgba(0, 0, 0, 0.12) 100%
+    );
+}
+
+/* ---------- HTML / BODY ---------- */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;            /* no page scroll — only internal content scrolls */
+}
+
+body {
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-mono);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;               /* full viewport */
+    position: relative;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- CRT SCANLINE OVERLAY ---------- */
+.crt-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.18) 0px,
+        rgba(0, 0, 0, 0.18) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    mix-blend-mode: multiply;
+}
+
+.crt-vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(0, 0, 0, 0.55) 100%
+    );
+}
+
+
+/* =====================================================================
+   AREA BASE — every collapsible region shares this
+   ===================================================================== */
+.area {
+    position: relative;
+    overflow: hidden;
+}
+
+.area-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-text-dim) transparent;
+}
+
+/* Webkit scrollbar */
+.area-content::-webkit-scrollbar { width: 8px; height: 8px; }
+.area-content::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
+.area-content::-webkit-scrollbar-thumb {
+    background: var(--c-text-dim);
+    border-radius: 0;
+}
+
+/* Collapsed strip — hidden by default, shown when area is collapsed */
+.area-strip {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* When collapsed: hide content, show strip */
+.area.collapsed .area-content {
+    display: none;
+}
+.area.collapsed .area-strip {
+    display: flex;
+}
+
+
+/* =====================================================================
+   HEADER (20vh → collapses to 3.5vh)
+   ===================================================================== */
+.area-header {
+    height: 20vh;
+    flex: 0 0 auto;
+    border-bottom: 2px solid var(--accent-header);
+    box-shadow:
+        0 0 12px rgba(255, 45, 149, 0.45),
+        inset 0 0 24px rgba(255, 45, 149, 0.08);
+    background:
+        linear-gradient(180deg, rgba(255,45,149,0.06) 0%, transparent 100%),
+        var(--c-panel);
+    transition: height var(--t-collapse);
+}
+
+.area-header.collapsed {
+    height: var(--strip-h);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1vh;
+    padding: 1vh 6vh;            /* room for toggle on the right + controls on left */
+    pointer-events: none;
+}
+
+/* ---------- HEADER CONTROL BUTTONS (theme + language, top-left) ---------- */
+.header-controls {
+    position: absolute;
+    top: 0.8vh;
+    left: 1vw;
+    z-index: 50;
+    display: flex;
+    gap: 0.6vw;
+}
+
+.header-btn {
+    background: var(--c-bg);
+    color: var(--accent-header);
+    border: 2px solid var(--accent-header);
+    box-shadow: 0 0 8px var(--accent-header);
+    padding: 0.4vh 0.8vw;
+    font-family: var(--font-mono);
+    font-size: 1.4vh;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3vh;
+    min-height: 3vh;
+}
+
+.header-btn:hover {
+    background: var(--accent-header);
+    color: var(--c-bg);
+}
+
+.header-btn:active {
+    transform: scale(0.92);
+}
+
+#themeIcon {
+    font-size: 2vh;
+    line-height: 1;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    width: 100%;
+}
+
+.brand-tape {
+    font-size: 4vh;
+    color: var(--accent-header);
+    text-shadow: 0 0 6px var(--accent-header), 0 0 14px var(--accent-header);
+    animation: tapeBlink 2.2s steps(2) infinite;
+}
+
+.header-title {
+    font-family: var(--font-display);
+    font-size: 7vh;
+    line-height: 1;
+    color: var(--c-text);
+    text-shadow:
+        0 0 4px var(--accent-header),
+        0 0 10px var(--accent-header),
+        0 0 22px rgba(255, 45, 149, 0.6);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
+.header-sub {
+    font-size: 1.9vh;
+    color: var(--accent-header);
+    text-shadow: 0 0 4px var(--accent-header);
+    letter-spacing: 0.25em;
+    opacity: 0.85;
+}
+
+.header-strip .strip-text {
+    color: var(--accent-header);
+    text-shadow: 0 0 6px var(--accent-header);
+    font-size: 2vh;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+}
+
+
+/* =====================================================================
+   SECTION (70vh — flex row of nav + main)
+   ===================================================================== */
+.area-section {
+    flex: 1 1 auto;              /* grows to fill space freed by collapsed header/footer */
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+    border-top: none;
+    border-bottom: none;
+}
+
+
+/* =====================================================================
+   NAV (20vw → collapses to 5vw)
+   ===================================================================== */
+.area-nav {
+    width: 20vw;
+    flex: 0 0 auto;
+    border-right: 2px solid var(--accent-nav);
+    box-shadow:
+        0 0 12px rgba(57, 255, 20, 0.35),
+        inset 0 0 24px rgba(57, 255, 20, 0.06);
+    background:
+        linear-gradient(90deg, rgba(57,255,20,0.05) 0%, transparent 100%),
+        var(--c-panel);
+    transition: width var(--t-collapse);
+}
+
+.area-nav.collapsed {
+    width: var(--strip-w);
+}
+
+.nav-content {
+    padding: 2vh 1.5vw;
+    padding-right: 5vh;          /* room for toggle button on the right edge */
+}
+
+.nav-title {
+    font-family: var(--font-display);
+    font-size: 4vh;
+    color: var(--accent-nav);
+    text-shadow: 0 0 6px var(--accent-nav), 0 0 14px var(--accent-nav);
+    text-align: center;
+    border-bottom: 1px dashed var(--accent-nav);
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
+    letter-spacing: 0.2em;
+    pointer-events: none;
+}
+
+/* ---------- NAV MODULES (search / sort / chips) ---------- */
+.nav-module {
+    margin-bottom: 2.5vh;
+}
+.nav-module:last-child {
+    margin-bottom: 0;
+}
+
+.nav-module-label {
+    font-size: 1.4vh;
+    color: var(--accent-nav);
+    text-shadow: 0 0 3px var(--accent-nav);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.9vh;
+    opacity: 0.85;
+}
+
+/* collapsible nav sections — click the label to expand/collapse */
+.nav-module-collapsible .nav-module-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+.nav-module-collapsible .nav-module-toggle:hover {
+    opacity: 1;
+}
+
+.nav-collapse-arrow {
+    font-size: 1vh;
+    color: var(--accent-nav);
+    text-shadow: 0 0 3px var(--accent-nav);
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+/* when collapsed, rotate the arrow and hide the body */
+.nav-module-collapsed .nav-collapse-arrow {
+    transform: rotate(-90deg);
+}
+.nav-module-collapsed .nav-module-body {
+    display: none;
+}
+
+/* category chip search field (inside collapsible section) */
+.nav-chip-search {
+    margin-bottom: 0.7vh;
+    font-size: 1.2vh !important;
+    padding: 0.5vh 0.6vw !important;
+}
+
+/* text search input + sort select share base styling */
+.nav-search-input,
+.nav-sort-select {
+    width: 100%;
+    background: var(--c-bg);
+    color: var(--accent-nav);
+    border: 1px solid var(--accent-nav);
+    box-shadow: inset 0 0 6px rgba(57,255,20,0.12);
+    padding: 0.8vh 0.8vw;
+    font-family: var(--font-mono);
+    font-size: 1.5vh;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+    letter-spacing: 0.03em;
+}
+
+.nav-search-input:focus,
+.nav-sort-select:focus {
+    box-shadow: 0 0 8px rgba(57,255,20,0.5), inset 0 0 6px rgba(57,255,20,0.2);
+}
+
+.nav-search-input::placeholder {
+    color: var(--c-text-dim);
+}
+
+/* select dropdown arrow + options */
+.nav-sort-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--accent-nav) 50%),
+                      linear-gradient(135deg, var(--accent-nav) 50%, transparent 50%);
+    background-position: calc(100% - 1.2vw) center, calc(100% - 0.8vw) center;
+    background-size: 0.5vh 0.5vh, 0.5vh 0.5vh;
+    background-repeat: no-repeat;
+    padding-right: 2.2vw;
+    cursor: pointer;
+}
+.nav-sort-select option {
+    background: var(--c-bg);
+    color: var(--accent-nav);
+}
+
+/* filter chips */
+.nav-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7vh 0.5vw;
+}
+
+.nav-chip {
+    background: transparent;
+    color: var(--accent-nav);
+    border: 1px solid var(--accent-nav);
+    padding: 0.4vh 0.7vw;
+    font-family: var(--font-mono);
+    font-size: 1.3vh;
+    cursor: pointer;
+    text-shadow: 0 0 2px var(--accent-nav);
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+.nav-chip:hover {
+    background: rgba(57,255,20,0.15);
+}
+.nav-chip.active {
+    background: var(--accent-nav);
+    color: var(--c-bg);
+    text-shadow: none;
+    box-shadow: 0 0 8px rgba(57,255,20,0.6);
+}
+
+.nav-strip {
+    position: relative;            /* anchor for the absolutely-positioned label */
+}
+.nav-strip .strip-text {
+    position: absolute;
+    left: 0.8vw;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-nav);
+    text-shadow: 0 0 6px var(--accent-nav);
+    font-size: 1.9vh;
+    letter-spacing: 0.3em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: bold;
+}
+
+
+/* =====================================================================
+   MAIN (80vw — not collapsible, grows)
+   ===================================================================== */
+.area-main {
+    flex: 1 1 auto;              /* grows when nav collapses */
+    min-width: 0;
+    border-left: none;
+    box-shadow:
+        inset 0 0 30px rgba(0, 229, 255, 0.06);
+    background:
+        radial-gradient(ellipse at 50% 40%, rgba(0,229,255,0.05) 0%, transparent 60%),
+        var(--c-panel);
+}
+
+.main-content {
+    padding: 0 1.2vw 2vh;
+}
+
+/* ---------- RESULTS BAR (sticky top of main) ---------- */
+.results-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1.2vh 0.5vw;
+    border-bottom: 1px dashed rgba(0,229,255,0.3);
+    position: sticky;
+    top: 0;
+    background: var(--c-panel);
+    z-index: 2;
+}
+
+.results-text {
+    color: var(--accent-cyan);
+    font-size: 1.4vh;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 3px var(--accent-cyan);
+    white-space: nowrap;
+}
+
+.clear-btn {
+    background: transparent;
+    color: var(--c-magenta);
+    border: 1px solid var(--c-magenta);
+    padding: 0.4vh 0.8vw;
+    font-family: var(--font-mono);
+    font-size: 1.3vh;
+    cursor: pointer;
+    text-shadow: 0 0 3px var(--c-magenta);
+    letter-spacing: 0.1em;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+.clear-btn:hover {
+    background: var(--c-magenta);
+    color: var(--c-bg);
+    text-shadow: none;
+}
+
+/* ---------- VIDEO GRID ---------- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.4vh 1vw;
+    padding-top: 1.5vh;
+}
+
+.video-card {
+    background: rgba(0, 229, 255, 0.035);
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, background 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9vh;
+    min-height: 0;
+    overflow: hidden;          /* keep thumbnail inside card corners */
+}
+.video-card:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 12px rgba(0,229,255,0.3);
+    background: rgba(0, 229, 255, 0.06);
+    transform: translateY(-2px);
+}
+.video-card:active {
+    transform: translateY(0) scale(0.99);
+}
+
+/* --- thumbnail area (top of card) --- */
+/* Thumbnails are PERMANENT (always visible, not hover-only).
+   Fixed aspect ratio (16:9) so the grid is consistent whether or not
+   a thumbnail is available. NOT FOUND placeholder fills the same space. */
+.video-thumb-area {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+.video-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* NOT FOUND placeholder — same dimensions as a real thumbnail */
+.video-thumb-notfound {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: var(--c-magenta);
+    font-size: 1.3vh;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 4px var(--c-magenta);
+    z-index: 0;
+    text-align: center;
+    padding: 0.5vh;
+}
+
+.video-card-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;               /* sit above the thumbnail */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5vw;
+    padding: 0.6vh 0.8vw;
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, transparent 100%);
+}
+
+/* row of platform badges (shows ALL available platforms, not +N) */
+.video-platforms-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3vh 0.3vw;
+    align-items: center;
+}
+
+/* when multiple platform badges are present, make them a bit smaller
+   so they fit on one line over the thumbnail */
+.video-platforms-row .video-platform-badge {
+    font-size: 1vh;
+    padding: 0.2vh 0.4vw;
+}
+
+/* card body (below thumb area) */
+.video-card > .video-title,
+.video-card > .video-types,
+.video-card > .video-meta-bottom,
+.video-card > .video-category-row {
+    padding: 0 1vw;
+}
+.video-card > .video-title {
+    padding-top: 0.8vh;
+}
+
+.video-platform-badge {
+    font-size: 1.2vh;
+    padding: 0.25vh 0.55vw;
+    border: 1px solid currentColor;
+    text-shadow: 0 0 3px currentColor;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.platform-youtube { color: var(--c-youtube); }
+.platform-cda     { color: var(--c-cda); }
+.platform-rumble  { color: var(--c-rumble); }
+
+.video-duration {
+    font-size: 1.5vh;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid transparent;
+    border-radius: 7px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.video-title {
+    font-size: 1.5vh;
+    color: var(--c-text);
+    line-height: 1.35;
+    text-shadow: 0 0 2px rgba(0,229,255,0.3);
+    /* clamp to 2 lines so cards stay even */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 4vh;
+    word-break: break-word;
+}
+
+.video-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4vh 0.4vw;
+}
+
+.video-type-badge {
+    font-size: 1.1vh;
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0,229,255,0.4);
+    padding: 0.15vh 0.45vw;
+    text-shadow: 0 0 2px var(--accent-cyan);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.video-meta-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5vw;
+    padding-bottom: 1.2vh !important;
+    margin-top: auto;            /* push to bottom of card */
+}
+
+.video-channel {
+    font-size: 1.1vh;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 2px rgba(0,229,255,0.4);
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+}
+
+.video-date {
+    font-size: 1.2vh;
+    color: var(--c-text-dim);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/* category row (bottom of card, below channel/date) */
+.video-category-row {
+    padding-bottom: 1vh !important;
+}
+
+.video-category-badge {
+    display: inline-block;
+    font-size: 1vh;
+    padding: 0.2vh 0.5vw;
+    background: rgba(255, 176, 0, 0.15);
+    border: 1px solid var(--c-amber);
+    color: var(--c-amber);
+    text-shadow: 0 0 2px var(--c-amber);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+/* ---------- EMPTY STATE ---------- */
+.main-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    color: var(--c-magenta);
+    padding: 8vh 2vw;
+}
+
+.empty-bracket {
+    font-family: var(--font-display);
+    font-size: 10vh;
+    line-height: 1;
+    color: var(--c-magenta);
+    text-shadow: 0 0 8px var(--c-magenta);
+    opacity: 0.5;
+}
+
+.empty-body { text-align: center; }
+
+.empty-title {
+    font-family: var(--font-display);
+    font-size: 5vh;
+    color: var(--c-magenta);
+    text-shadow: 0 0 6px var(--c-magenta);
+    margin-bottom: 1vh;
+    letter-spacing: 0.1em;
+}
+
+.empty-line {
+    font-size: 1.5vh;
+    color: var(--c-text);
+    line-height: 1.7;
+}
+
+
+/* =====================================================================
+   FOOTER (10vh → collapses to 3.5vh)
+   ===================================================================== */
+.area-footer {
+    height: 10vh;
+    flex: 0 0 auto;
+    border-top: 2px solid var(--accent-footer);
+    box-shadow:
+        0 0 12px rgba(255, 176, 0, 0.4),
+        inset 0 0 24px rgba(255, 176, 0, 0.07);
+    background:
+        linear-gradient(0deg, rgba(255,176,0,0.06) 0%, transparent 100%),
+        var(--c-panel);
+    transition: height var(--t-collapse);
+}
+
+.area-footer.collapsed {
+    height: var(--strip-h);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
+    flex-wrap: wrap;
+    padding: 0 6vh;              /* room for toggle (right) */
+    font-size: 1.7vh;
+    color: var(--accent-footer);
+    text-shadow: 0 0 3px var(--accent-footer);
+    letter-spacing: 0.1em;
+    pointer-events: none;
+}
+
+.footer-sep { opacity: 0.5; }
+.footer-author { color: var(--c-text); text-shadow: 0 0 5px var(--accent-footer); }
+.footer-clock { color: var(--c-text); }
+
+.footer-status { color: var(--c-magenta); text-shadow: 0 0 4px var(--c-magenta); }
+.rec-dot {
+    display: inline-block;
+    width: 0.9vh;
+    height: 0.9vh;
+    background: var(--c-magenta);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--c-magenta);
+    animation: recPulse 1s steps(2) infinite;
+    vertical-align: middle;
+}
+
+.footer-strip .strip-text {
+    color: var(--accent-footer);
+    text-shadow: 0 0 6px var(--accent-footer);
+    font-size: 2vh;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+}
+
+
+/* =====================================================================
+   TOGGLE BUTTONS
+   ===================================================================== */
+.toggle {
+    position: absolute;
+    z-index: 50;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-bg);
+    border: 2px solid currentColor;
+    cursor: pointer;
+    padding: 0;
+    font-family: var(--font-mono);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    line-height: 1;
+}
+
+.toggle:hover {
+    background: currentColor;
+}
+.toggle:hover .toggle-icon {
+    color: var(--c-bg);
+    text-shadow: none;
+}
+
+.toggle:active {
+    transform: scale(0.9);
+}
+
+.toggle-icon {
+    font-size: 1.8vh;
+    line-height: 1;
+    text-shadow: 0 0 4px currentColor;
+    transition: color 0.2s ease;
+}
+
+/* Per-area toggle placement + accent color */
+.toggle-header {
+    top: 0.8vh;
+    right: 1vw;
+    color: var(--accent-header);
+    box-shadow: 0 0 8px var(--accent-header);
+}
+
+.toggle-nav {
+    top: 50%;
+    right: 0.6vw;
+    transform: translateY(-50%);
+    color: var(--accent-nav);
+    box-shadow: 0 0 8px var(--accent-nav);
+    width: 2.6vh;
+    height: 2.6vh;
+}
+.toggle-nav:active { transform: translateY(-50%) scale(0.9); }
+.toggle-nav .toggle-icon { font-size: 1.3vh; }
+
+.toggle-footer {
+    top: 0.8vh;
+    right: 1vw;
+    color: var(--accent-footer);
+    box-shadow: 0 0 8px var(--accent-footer);
+}
+
+
+/* =====================================================================
+   ANIMATIONS
+   ===================================================================== */
+@keyframes blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes tapeBlink {
+    0%, 60%   { opacity: 1; }
+    61%, 100% { opacity: 0.35; }
+}
+
+@keyframes recPulse {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0.2; }
+}
+
+
+/* =====================================================================
+   VIDEO DETAIL MODAL
+   ===================================================================== */
+
+/* backdrop + scroll lock */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 3vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* modal panel */
+.modal {
+    position: relative;
+    background: var(--c-panel);
+    border: 2px solid var(--c-cyan);
+    box-shadow:
+        0 0 24px rgba(0, 229, 255, 0.4),
+        0 0 60px rgba(0, 229, 255, 0.15);
+    max-width: 640px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-cyan) transparent;
+    transform: scale(0.92);
+    transition: transform 0.25s ease;
+}
+
+.modal-backdrop.open .modal {
+    transform: scale(1);
+}
+
+.modal::-webkit-scrollbar { width: 8px; }
+.modal::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+.modal::-webkit-scrollbar-thumb { background: var(--c-cyan); }
+
+.modal-body {
+    padding: 0;               /* thumb goes edge-to-edge, text section has its own padding */
+}
+
+/* --- modal thumbnail (top, full width, edge-to-edge) --- */
+.modal-thumb-area {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+    border-bottom: 2px solid var(--c-cyan);
+}
+
+.modal-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-thumb-notfound {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: var(--c-magenta);
+    font-size: 2.5vh;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 6px var(--c-magenta);
+}
+
+/* --- modal text section (below thumbnail) --- */
+.modal-text {
+    padding: 2.5vh 2.5vw 3.5vh;
+}
+
+/* close button */
+.modal-close {
+    position: absolute;
+    top: 1vh;
+    right: 1.2vw;
+    z-index: 5;
+    width: 4vh;
+    height: 4vh;
+    background: #0d0e0f;
+    border: 2px solid var(--c-magenta);
+    border-radius: 8px;
+    color: var(--c-magenta);
+    font-size: 2.5vh;
+    line-height: 1;
+    cursor: pointer;
+    text-shadow: 0 0 2px var(--c-magenta);
+    transition: background 0.15s ease, color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.modal-close:hover {
+    background: var(--c-magenta);
+    color: var(--c-bg);
+    text-shadow: none;
+}
+
+/* title */
+.modal-title {
+    font-family: var(--font-display);
+    font-size: 4vh;
+    line-height: 1.1;
+    color: var(--c-text);
+    text-shadow: 0 0 6px var(--c-cyan), 0 0 16px rgba(0,229,255,0.4);
+    margin-bottom: 2vh;
+    word-break: break-word;
+    pointer-events: none;
+}
+
+/* meta row (platform / channel / date / duration) */
+.modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vh 2vw;
+    padding: 1.5vh 0;
+    border-top: 1px dashed rgba(0,229,255,0.25);
+    border-bottom: 1px dashed rgba(0,229,255,0.25);
+    margin-bottom: 2.5vh;
+    pointer-events: none;
+}
+
+.modal-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
+}
+
+.modal-meta-label {
+    font-size: 1.1vh;
+    color: var(--c-text-dim);
+    letter-spacing: 0.15em;
+}
+
+.modal-meta-value {
+    font-size: 1.6vh;
+    color: var(--c-text);
+    text-shadow: 0 0 3px var(--c-cyan);
+    letter-spacing: 0.05em;
+}
+
+/* meta value platform coloring */
+.modal-meta-item.platform-youtube .modal-meta-value { color: var(--c-youtube); text-shadow: 0 0 3px var(--c-youtube); }
+.modal-meta-item.platform-cda     .modal-meta-value { color: var(--c-cda);     text-shadow: 0 0 3px var(--c-cda); }
+.modal-meta-item.platform-rumble  .modal-meta-value { color: var(--c-rumble);  text-shadow: 0 0 3px var(--c-rumble); }
+
+/* sections (description / categories / tags / watch on) */
+.modal-section {
+    margin-bottom: 2.2vh;
+}
+.modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section-title {
+    font-size: 1.3vh;
+    color: var(--c-cyan);
+    text-shadow: 0 0 3px var(--c-cyan);
+    letter-spacing: 0.2em;
+    margin-bottom: 1vh;
+    font-weight: normal;
+    pointer-events: none;
+}
+
+.modal-description {
+    font-size: 1.5vh;
+    color: var(--c-text);
+    line-height: 1.6;
+    word-break: break-word;
+    pointer-events: none;
+}
+
+.modal-none {
+    font-size: 1.4vh;
+    color: var(--c-text-dim);
+    font-style: italic;
+    pointer-events: none;
+}
+
+/* badges (categories + tags) */
+.modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6vh 0.5vw;
+    align-items: center;
+    pointer-events: none;
+}
+
+.modal-badge {
+    font-size: 1.2vh;
+    padding: 0.3vh 0.7vw;
+    border: 1px solid currentColor;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.modal-badge-type {
+    color: var(--c-cyan);
+    text-shadow: 0 0 2px var(--c-cyan);
+}
+
+.modal-badge-tag {
+    color: var(--c-amber);
+    text-shadow: 0 0 2px var(--c-amber);
+    border-style: dashed;
+}
+
+.modal-badge-channel {
+    color: var(--c-green);
+    text-shadow: 0 0 2px var(--c-green);
+}
+
+.modal-badge-category {
+    color: var(--c-amber);
+    text-shadow: 0 0 2px var(--c-amber);
+    background: rgba(255, 176, 0, 0.15);
+}
+
+/* highlight category meta value */
+.modal-meta-item.has-category .modal-meta-value {
+    color: var(--c-amber);
+    text-shadow: 0 0 3px var(--c-amber);
+}
+
+/* platform player buttons */
+.modal-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh 1vw;
+}
+
+.modal-platform-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6vw;
+    padding: 1.2vh 1.5vw;
+    background: transparent;
+    border: 2px solid currentColor;
+    color: var(--c-text);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 1.5vh;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    text-shadow: 0 0 3px currentColor;
+}
+
+.modal-platform-btn:hover {
+    background: currentColor;
+}
+.modal-platform-btn:hover .modal-platform-icon,
+.modal-platform-btn:hover .modal-platform-text {
+    color: var(--c-bg);
+    text-shadow: none;
+}
+
+.modal-platform-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    border-style: dashed;
+}
+.modal-platform-btn.disabled:hover {
+    background: transparent;
+}
+.modal-platform-btn.disabled:hover .modal-platform-icon,
+.modal-platform-btn.disabled:hover .modal-platform-text {
+    color: var(--c-text);
+    text-shadow: 0 0 3px currentColor;
+}
+
+.modal-platform-icon {
+    font-size: 1.8vh;
+    line-height: 1;
+}
+
+.modal-platform-text {
+    font-weight: bold;
+}
+
+.modal-platform-channel {
+    font-size: 1.1vh;
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+/* per-platform colors for modal buttons */
+.modal-platform-btn.platform-youtube { color: var(--c-youtube); box-shadow: 0 0 8px rgba(255,59,59,0.3); }
+.modal-platform-btn.platform-cda     { color: var(--c-cda);     box-shadow: 0 0 8px rgba(59,158,255,0.3); }
+.modal-platform-btn.platform-rumble  { color: var(--c-rumble);  box-shadow: 0 0 8px rgba(133,224,59,0.3); }
+
+
+/* =====================================================================
+   MODAL RESPONSIVE
+   ===================================================================== */
+@media (max-width: 600px) {
+    .modal-backdrop { padding: 2vh 2vw; }
+    .modal-text { padding: 2vh 4vw 3vh; }
+    .modal-title { font-size: 3.5vh; }
+    .modal-meta { gap: 1vh 3vw; }
+    .modal-meta-value { font-size: 1.4vh; }
+    .modal-description { font-size: 1.4vh; }
+    .modal-platform-btn { font-size: 1.4vh; padding: 1vh 3vw; }
+    .modal-platform-channel { font-size: 1vh; }
+}
+
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 900px) {
+    .header-title { font-size: 5vh; }
+    .header-sub { font-size: 1.5vh; letter-spacing: 0.15em; }
+    .nav-title { font-size: 3vh; }
+    .footer-content { font-size: 1.4vh; gap: 1vw; }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1vh 0.8vw;
+    }
+}
+
+/* ---- MOBILE: nav becomes an overlay drawer ---- */
+@media (max-width: 768px) {
+    /* nav overlays main instead of sitting beside it */
+    .area-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 70vw;
+        max-width: 320px;
+        z-index: 20;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    }
+    .area-nav.collapsed {
+        width: 0;             /* fully hidden — overlay doesn't take space */
+        box-shadow: none;
+        border-right: none;
+    }
+    .area-nav.collapsed .area-strip {
+        display: none;        /* hide the strip text too — toggle button is enough */
+    }
+    .area-nav.collapsed .toggle-nav {
+        display: flex;        /* keep the toggle button visible */
+        position: fixed;
+        left: 1vw;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 21;
+    }
+    .area-main {
+        width: 100%;          /* take full width since nav is out of flow */
+    }
+
+    /* larger touch targets */
+    .toggle, .header-btn {
+        min-width: 4vh;
+        min-height: 4vh;
+    }
+    .nav-chip {
+        padding: 0.8vh 1.2vw;
+        font-size: 1.4vh;
+    }
+}
+
+@media (max-width: 600px) {
+    :root { --strip-w: 6vw; }
+    .header-title { font-size: 3.6vh; }
+    .brand-tape { font-size: 2.5vh; }
+    .header-sub { font-size: 1.2vh; }
+    .footer-content { font-size: 1.1vh; }
+    .nav-strip .strip-text { display: none; }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    .video-title { font-size: 1.4vh; }
+    .empty-bracket { font-size: 7vh; }
+    .empty-title { font-size: 3.5vh; }
+
+    /* header controls: smaller on tight screens */
+    .header-btn {
+        padding: 0.3vh 0.6vw;
+        font-size: 1.2vh;
+        min-width: 3.5vh;
+        min-height: 3.5vh;
+    }
+    #themeIcon { font-size: 1.6vh; }
+
+    .header-content {
+        padding: 1vh 1vh;   /* less side padding on narrow screens */
+    }
+}
+
+/* ---- VERY SMALL: stack video grid to 1-2 columns ---- */
+@media (max-width: 400px) {
+    .header-title { font-size: 2.8vh; }
+    .brand-tape { font-size: 2vh; }
+    .header-sub { font-size: 1vh; letter-spacing: 0.1em; }
+    .footer-content { font-size: 0.9vh; gap: 0.5vw; }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}

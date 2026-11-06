@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyfrowa Filmoteka — Digital Film Library. A searchable, sortable archive of published videos.">
+
+    <!-- DECORATION -->
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%2339ff14' font-family='monospace'%3E%E2%96%B6%3C/text%3E%3C/svg%3E">
+    <title>CYFROWA FILMOTEKA</title>
+
+    <!-- FONTS (retro mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CRT SCANLINE + VIGNETTE OVERLAY -->
+    <div class="crt-overlay" aria-hidden="true"></div>
+    <div class="crt-vignette" aria-hidden="true"></div>
+
+
+    <!-- ============================== HEADER (20vh) ============================== -->
+    <header id="header" class="area area-header">
+        <!-- content injected by view-render.js -->
+        <div class="area-content header-content" id="headerContent"></div>
+
+        <div class="area-strip header-strip">
+            <span class="strip-text">HEADER</span>
+        </div>
+
+        <!-- THEME + LANGUAGE TOGGLES (top-left) -->
+        <div class="header-controls">
+            <button class="header-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <span id="themeIcon">&#9680;</span>
+            </button>
+            <button class="header-btn" id="langToggle" type="button" aria-label="Toggle language" title="Toggle language">
+                <span id="langLabel">EN</span>
+            </button>
+        </div>
+
+        <!-- AREA COLLAPSE TOGGLE (top-right) -->
+        <button class="toggle toggle-header" data-target="header" type="button" aria-label="Toggle header" title="Toggle header">
+            <span class="toggle-icon" data-icon-expanded="&#9650;" data-icon-collapsed="&#9660;">&#9650;</span>
+        </button>
+    </header>
+
+
+    <!-- ============================== SECTION (70vh) ============================== -->
+    <section id="section" class="area area-section">
+
+        <!-- -------- NAV (20vw) -------- -->
+        <nav id="nav" class="area area-nav">
+            <!-- content injected by view-render.js -->
+            <div class="area-content nav-content" id="navContent"></div>
+
+            <div class="area-strip nav-strip">
+                <span class="strip-text">NAV</span>
+            </div>
+
+            <button class="toggle toggle-nav" data-target="nav" type="button" aria-label="Toggle navigation" title="Toggle navigation">
+                <span class="toggle-icon" data-icon-expanded="&#9664;" data-icon-collapsed="&#9654;">&#9664;</span>
+            </button>
+        </nav>
+
+
+        <!-- -------- MAIN (80vw, not collapsible) -------- -->
+        <main id="main" class="area area-main">
+            <!-- video grid injected by view-grid.js; card clicks open the modal -->
+            <div class="area-content main-content" id="mainContent"></div>
+        </main>
+    </section>
+
+
+    <!-- ============================== FOOTER (10vh) ============================== -->
+    <footer id="footer" class="area area-footer">
+        <!-- content injected by view-render.js -->
+        <div class="area-content footer-content" id="footerContent"></div>
+
+        <div class="area-strip footer-strip">
+            <span class="strip-text">FOOTER</span>
+        </div>
+
+        <button class="toggle toggle-footer" data-target="footer" type="button" aria-label="Toggle footer" title="Toggle footer">
+            <span class="toggle-icon" data-icon-expanded="&#9660;" data-icon-collapsed="&#9650;">&#9660;</span>
+        </button>
+    </footer>
+
+
+    <!-- ============================== MODAL ROOT ============================== -->
+    <!-- view-modal.js injects the backdrop + panel here; shown when a card is clicked -->
+    <div id="modalRoot"></div>
+
+
+    <!-- ============================== SCRIPTS ============================== -->
+    <!-- load order: config → data → lib (utilities) → ui (behaviour + renderers) -->
+
+    <!-- config (site structure + text keys + translations) -->
+    <script src="js/config/cfg-header.js"></script>
+    <script src="js/config/cfg-nav.js"></script>
+    <script src="js/config/cfg-main.js"></script>
+    <script src="js/config/cfg-footer.js"></script>
+    <script src="js/config/cfg-i18n.js"></script>
+
+    <!-- data (pure video database) -->
+    <script src="js/data/all-videos.js"></script>
+
+    <!-- lib (shared utilities + logic) -->
+    <script src="js/lib/util-format.js"></script>
+    <script src="js/lib/util-labels.js"></script>
+    <script src="js/lib/util-video-ops.js"></script>
+    <script src="js/lib/util-i18n.js"></script>
+
+    <!-- ui / behaviour (toggles, theme, language, clock) -->
+    <script src="js/ui/behaviour/behaviour-layout.js"></script>
+
+    <!-- ui / views (renderers) -->
+    <script src="js/ui/views/view-render.js"></script>
+    <script src="js/ui/views/view-grid.js"></script>
+    <script src="js/ui/views/view-modal.js"></script>
+</body>
+</html>
